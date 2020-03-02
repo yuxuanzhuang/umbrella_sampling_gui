@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:25:21 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	-1987.03
+1.0000	-475.08
+2.0000	-99.1025
+3.0000	70.5879
+4.0000	-26.0898
+5.0000	-85.5831
+6.0000	44.4083
+7.0000	84.8957
+8.0000	-43.6691
+9.0000	-37.5686
+10.0000	18.5098

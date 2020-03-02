@@ -1,0 +1,88 @@
+# This file was created Thu Feb 27 13:34:10 2020
+# Created by:
+#                        :-) GROMACS - gmx awh, 2020 (-:
+# 
+# Executable:   /opt/tcbsys/gromacs/2020/AVX2_256/bin/gmx
+# Data prefix:  /opt/tcbsys/gromacs/2020/AVX2_256
+# Working dir:  /home/scottzhuang/umbrella_sampling_GUI/example/2.1.initial_configurations/awh
+# Command line:
+#   gmx awh -f pull.edr -s pull.tpr
+# gmx awh is part of G R O M A C S:
+#
+# Getting the Right Output Means no Artefacts in Calculating Stuff
+#
+@    title "AWH"
+@    xaxis  label "(nm or deg)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "PMF"
+# AWH metadata: target error = 0.39 kT = 0.97 kJ/mol
+# AWH metadata: log sample weight = 6.97
+    0.0000  4.18639
+    0.0492  2.02571
+    0.0984  2.31605
+    0.1475  2.92735
+    0.1967  3.16119
+    0.2459  3.76195
+    0.2951  4.14249
+    0.3443  4.24706
+    0.3934  4.4497
+    0.4426  5.14474
+    0.4918  5.25764
+    0.5410  5.44794
+    0.5902  5.51577
+    0.6393  5.78265
+    0.6885  5.71768
+    0.7377  6.10497
+    0.7869  5.80636
+    0.8361  6.08948
+    0.8852  6.32095
+    0.9344  5.84687
+    0.9836  5.68113
+    1.0328  5.39705
+    1.0820  5.50177
+    1.1311  5.29115
+    1.1803  5.21972
+    1.2295  5.41541
+    1.2787  5.16026
+    1.3279  5.18868
+    1.3770  5.13924
+    1.4262  5.2775
+    1.4754  4.73171
+    1.5246  4.46483
+    1.5738  4.09293
+    1.6230  3.54936
+    1.6721  3.11464
+    1.7213  2.84271
+    1.7705  2.09697
+    1.8197  1.31549
+    1.8689  0.625894
+    1.9180  0.364656
+    1.9672  0.18615
+    2.0164  0
+    2.0656  0.0519836
+    2.1148  0.506755
+    2.1639  0.259136
+    2.2131  0.575764
+    2.2623  0.585698
+    2.3115  1.30404
+    2.3607  1.84724
+    2.4098  2.63283
+    2.4590  3.58585
+    2.5082  4.60824
+    2.5574  5.61015
+    2.6066  6.96253
+    2.6557  7.87183
+    2.7049  9.02119
+    2.7541  10.1254
+    2.8033  11.2415
+    2.8525  11.6674
+    2.9016  12.1339
+    2.9508  12.473
+    3.0000  13.0795

@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:28:33 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# God Rules Over Mankind, Animals, Cosmos and Such
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	712.969
+1.0000	216.752
+2.0000	124.923
+3.0000	4.99276
+4.0000	-42.2715
+5.0000	-58.9575
+6.0000	35.526
+7.0000	71.1557
+8.0000	53.0871
+9.0000	127.918
+10.0000	44.2801

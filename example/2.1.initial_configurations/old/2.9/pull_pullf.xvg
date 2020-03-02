@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:28:40 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# GRowing Old MAkes el Chrono Sweat
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	812.969
+1.0000	236.961
+2.0000	13.0633
+3.0000	-30.3212
+4.0000	33.1494
+5.0000	34.3842
+6.0000	12.9258
+7.0000	35.9334
+8.0000	39.2236
+9.0000	-7.15049
+10.0000	15.3297

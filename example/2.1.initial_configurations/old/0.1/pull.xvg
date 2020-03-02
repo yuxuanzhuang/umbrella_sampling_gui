@@ -1,0 +1,28 @@
+# This file was created Mon Oct 16 17:25:21 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "dH/d\xl\f{}"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "dH/d\xl\f{} (kJ/mol [\xl\f{}]\S-1\N)"
+@TYPE xy
+@ subtitle "T = 300 (K) \xl\f{} = 0.0000"
+0.0000 18.780947
+1.0000 -132.76292
+2.0000 28.620209
+3.0000 20.251520
+4.0000 26.149195
+5.0000 16.590572
+6.0000 7.0372558
+7.0000 -105.68592
+8.0000 7.6701546
+9.0000 20.463305
+10.0000 24.433300

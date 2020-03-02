@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:27:51 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	112.969
+1.0000	44.9712
+2.0000	24.2666
+3.0000	8.53155
+4.0000	60.9775
+5.0000	25.5552
+6.0000	96.4928
+7.0000	80.8822
+8.0000	30.346
+9.0000	61.3334
+10.0000	-50.3424

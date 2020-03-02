@@ -1,0 +1,28 @@
+# This file was created Mon Oct 16 17:26:11 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# GROtesk MACabre and Sinister
+#
+@    title "dH/d\xl\f{}"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "dH/d\xl\f{} (kJ/mol [\xl\f{}]\S-1\N)"
+@TYPE xy
+@ subtitle "T = 300 (K) \xl\f{} = 0.0000"
+0.0000 18.780947
+1.0000 6.5758643
+2.0000 -9.6369152
+3.0000 -5.2976246
+4.0000 25.753189
+5.0000 37.643181
+6.0000 12.920857
+7.0000 -8.7760124
+8.0000 -51.068111
+9.0000 22.410736
+10.0000 8.5722275

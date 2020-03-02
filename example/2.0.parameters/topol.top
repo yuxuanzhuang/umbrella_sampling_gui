@@ -1,0 +1,11 @@
+#include "martini_v2.2.itp"
+#include "martini_v2.0_solvents.itp"
+#include "bead.itp"
+
+[ system ]
+Hexadecane_W partitioning
+
+[ molecules ]
+HD    320
+W    1280
+B       1

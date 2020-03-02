@@ -1,0 +1,28 @@
+# This file was created Mon Oct 16 17:28:27 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# God Rules Over Mankind, Animals, Cosmos and Such
+#
+@    title "dH/d\xl\f{}"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "dH/d\xl\f{} (kJ/mol [\xl\f{}]\S-1\N)"
+@TYPE xy
+@ subtitle "T = 300 (K) \xl\f{} = 0.0000"
+0.0000 18.780947
+1.0000 -58.783020
+2.0000 15.170637
+3.0000 -6.3239613
+4.0000 4.1124992
+5.0000 -7.3706284
+6.0000 -30.306749
+7.0000 29.506495
+8.0000 -10.842152
+9.0000 -53.086632
+10.0000 8.0739307

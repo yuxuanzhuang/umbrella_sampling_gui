@@ -1,0 +1,13 @@
+;;;;;; GENERAL BEAD
+; Last updated 10-06-2017 
+
+;;;;;; REPLACEMENT BEAD
+
+[moleculetype]
+; molname 	nrexcl
+  B 		1
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+  1 	Na 	1 	B 	B 	1 	0 
+;Change the type to look at the partitioning of other bead types

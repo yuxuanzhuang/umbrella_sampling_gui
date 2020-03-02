@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:27:23 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	-287.031
+1.0000	76.3859
+2.0000	115.934
+3.0000	8.14751
+4.0000	29.781
+5.0000	16.1264
+6.0000	56.7525
+7.0000	-1.58371
+8.0000	-32.2219
+9.0000	23.3543
+10.0000	-5.27013

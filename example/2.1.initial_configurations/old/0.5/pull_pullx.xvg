@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:25:50 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# GROningen Mixture of Alchemy and Childrens' Stories
+#
+@    title "Pull COM"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Position (nm)"
+@TYPE xy
+0.0000	2.08703
+1.0000	0.875386
+2.0000	0.571974
+3.0000	0.49435
+4.0000	0.476261
+5.0000	0.490558
+6.0000	0.547118
+7.0000	0.492348
+8.0000	0.513532
+9.0000	0.551355
+10.0000	0.496061

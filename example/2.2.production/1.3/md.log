@@ -1,0 +1,3657 @@
+Log file opened on Mon Oct 16 17:54:23 2017
+Host: md92  pid: 9505  rank ID: 0  number of ranks:  1
+                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra   Sebastian Fritsch 
+  Gerrit Groenhof   Christoph Junghans   Anca Hamuraru    Vincent Hindriksen
+ Dimitrios Karkoulis    Peter Kasson        Jiri Kraus      Carsten Kutzner  
+    Per Larsson      Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff 
+   Erik Marklund      Teemu Murtola       Szilard Pall       Sander Pronk   
+   Roland Schulz     Alexey Shvetsov     Michael Shirts     Alfons Sijbers  
+   Peter Tieleman    Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2015, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, VERSION 5.1.4
+Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+Data prefix:  /usr/local/gromacs-5.1.4
+Command line:
+  gmx mdrun -nt 6 -deffnm md -v -px md_x -pf md_f -cpi md.cpt
+
+GROMACS version:    VERSION 5.1.4
+Precision:          single
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     enabled (GMX_OPENMP_MAX_THREADS = 32)
+GPU support:        enabled
+OpenCL support:     disabled
+invsqrt routine:    gmx_software_invsqrt(x)
+SIMD instructions:  AVX2_256
+FFT library:        fftw-3.3.4-sse2-avx
+RDTSCP usage:       enabled
+C++11 compilation:  disabled
+TNG support:        enabled
+Tracing support:    disabled
+Built on:           ma 23 jan 2017 16:05:59 CET
+Built by:           root@md92 [CMAKE]
+Build OS/arch:      Linux 4.4.0-31-generic x86_64
+Build CPU vendor:   GenuineIntel
+Build CPU brand:    Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz
+Build CPU family:   6   Model: 63   Stepping: 2
+Build CPU features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+C compiler:         /usr/bin/cc GNU 5.4.0
+C compiler flags:    -march=core-avx2    -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter  -O3 -DNDEBUG -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds 
+C++ compiler:       /usr/bin/c++ GNU 5.4.0
+C++ compiler flags:  -march=core-avx2    -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function  -O3 -DNDEBUG -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds 
+Boost version:      1.58.0 (external)
+CUDA compiler:      /usr/local/cuda/bin/nvcc nvcc: NVIDIA (R) Cuda compiler driver;Copyright (c) 2005-2016 NVIDIA Corporation;Built on Sun_Sep__4_22:14:01_CDT_2016;Cuda compilation tools, release 8.0, V8.0.44
+CUDA compiler flags:-gencode;arch=compute_20,code=sm_20;-gencode;arch=compute_30,code=sm_30;-gencode;arch=compute_35,code=sm_35;-gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_52,code=sm_52;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_60,code=compute_60;-gencode;arch=compute_61,code=compute_61;-use_fast_math;-D_FORCE_INLINES; ;-march=core-avx2;-Wextra;-Wno-missing-field-initializers;-Wpointer-arith;-Wall;-Wno-unused-function;-O3;-DNDEBUG;-funroll-all-loops;-fexcess-precision=fast;-Wno-array-bounds;
+CUDA driver:        8.0
+CUDA runtime:       8.0
+
+
+Running on 1 node with total 6 cores, 12 logical cores, 1 compatible GPU
+Hardware detected:
+  CPU info:
+    Vendor: GenuineIntel
+    Brand:  Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz
+    Family:  6  model: 63  stepping:  2
+    CPU features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+    SIMD instructions most likely to fit this hardware: AVX2_256
+    SIMD instructions selected at GROMACS compile time: AVX2_256
+  GPU info:
+    Number of GPUs detected: 1
+    #0: NVIDIA GeForce GTX 960, compute cap.: 5.2, ECC:  no, stat: compatible
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Changing nstlist from 20 to 25, rlist from 1.196 to 1.239
+
+Input Parameters:
+   integrator                     = sd
+   tinit                          = 0
+   dt                             = 0.02
+   nsteps                         = 350000
+   init-step                      = 0
+   simulation-part                = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = 1703626911
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 1000
+   nstcalcenergy                  = 100
+   nstenergy                      = 100
+   nstxout-compressed             = 1000
+   compressed-x-precision         = 100
+   cutoff-scheme                  = Verlet
+   nstlist                        = 25
+   ns-type                        = Grid
+   pbc                            = xyz
+   periodic-molecules             = FALSE
+   verlet-buffer-tolerance        = 0.005
+   rlist                          = 1.239
+   rlistlong                      = 1.239
+   nstcalclr                      = 20
+   coulombtype                    = Reaction-Field
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.1
+   epsilon-r                      = 15
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-shift
+   rvdw-switch                    = 0
+   rvdw                           = 1.1
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.12
+   fourier-nx                     = 0
+   fourier-ny                     = 0
+   fourier-nz                     = 0
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 0
+   epsilon-surface                = 0
+   implicit-solvent               = No
+   gb-algorithm                   = Still
+   nstgbradii                     = 1
+   rgbradii                       = 1
+   gb-epsilon-solvent             = 80
+   gb-saltconc                    = 0
+   gb-obc-alpha                   = 1
+   gb-obc-beta                    = 0.8
+   gb-obc-gamma                   = 4.85
+   gb-dielectric-offset           = 0.009
+   sa-algorithm                   = Ace-approximation
+   sa-surface-tension             = 2.05016
+   tcoupl                         = No
+   nsttcouple                     = -1
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = FALSE
+   pcoupl                         = Berendsen
+   pcoupltype                     = Semiisotropic
+   nstpcouple                     = 20
+   tau-p                          = 12
+   compressibility (3x3):
+      compressibility[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  3.00000e-04}
+   ref-p (3x3):
+      ref-p[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = FALSE
+   QMconstraints                  = 0
+   QMMMscheme                     = 0
+   MMChargeScaleFactor            = 1
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = FALSE
+   Shake-SOR                      = FALSE
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = TRUE
+   pull-cylinder-r                = 1.5
+   pull-constr-tol                = 1e-06
+   pull-print-COM1                = FALSE
+   pull-print-COM2                = FALSE
+   pull-print-ref-value           = FALSE
+   pull-print-components          = FALSE
+   pull-nstxout                   = 100
+   pull-nstfout                   = 100
+   pull-ngroups                   = 3
+   pull-group 0:
+     atom: not available
+     weight: not available
+     pbcatom                        = -1
+   pull-group 1:
+     atom (1280):
+        atom[0,...,1279] = {1280,...,2559}
+     weight: not available
+     pbcatom                        = 1919
+   pull-group 2:
+     atom (1):
+        atom[0]=2560
+     weight: not available
+     pbcatom                        = -1
+   pull-ncoords                   = 1
+   pull-coord 0:
+   group[0]                       = 1
+   group[1]                       = 2
+   type                           = umbrella
+   geometry                       = distance
+   dim (3):
+      dim[0]=0
+      dim[1]=0
+      dim[2]=1
+   origin (3):
+      origin[0]= 0.00000e+00
+      origin[1]= 0.00000e+00
+      origin[2]= 0.00000e+00
+   vec (3):
+      vec[0]= 0.00000e+00
+      vec[1]= 0.00000e+00
+      vec[2]= 0.00000e+00
+   start                          = FALSE
+   init                           = 1.3
+   rate                           = 0
+   k                              = 1000
+   kB                             = 1000
+   rotation                       = FALSE
+   interactiveMD                  = FALSE
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = FALSE
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = FALSE
+   E-x:
+      n = 0
+   E-xt:
+      n = 0
+   E-y:
+      n = 0
+   E-yt:
+      n = 0
+   E-z:
+      n = 0
+   E-zt:
+      n = 0
+   swapcoords                     = no
+   adress                         = FALSE
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+grpopts:
+   nrdf:        7680
+   ref-t:         300
+   tau-t:           2
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0 0 0
+   energygrp-flags[  1]: 0 0 0
+   energygrp-flags[  2]: 0 0 0
+
+Using 1 MPI thread
+Using 6 OpenMP threads 
+
+1 compatible GPU is present, with ID 0
+1 GPU auto-selected for this run.
+Mapping of GPU ID to the 1 PP rank in this node: 0
+
+Cut-off's:   NS: 1.239   Coulomb: 1.1   LJ: 1.1
+Reaction-Field:
+epsRF = 0, rc = 1.1, krf = 0.375657, crf = 1.36364, epsfac = 9.26236
+The electrostatics potential has its minimum at r = 1.1
+System total charge: 0.000
+Potential shift: LJ r^-12: -3.186e-01 r^-6: -5.645e-01
+
+Using GPU 8x8 non-bonded kernels
+
+
+NOTE: With GPUs, reporting energy group contributions is not supported
+
+Removing pbc first time
+
+NOTE: The number of threads is not equal to the number of (logical) cores
+      and the -pin option is set to auto: will not pin thread to cores.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+
+Will apply potential COM pulling
+with 1 pull coordinate and 3 groups
+Pull group 1:  1280 atoms, mass 92160.000
+Pull group 2:     1 atoms, mass    72.000
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+N. Goga and A. J. Rzepiela and A. H. de Vries and S. J. Marrink and H. J. C.
+Berendsen
+Efficient Algorithms for Langevin and DPD Dynamics
+J. Chem. Theory Comput. 8 (2012) pp. 3637--3649
+-------- -------- --- Thank You --- -------- --------
+
+There are: 2561 Atoms
+Initial temperature: 305.584 K
+
+Started mdrun on rank 0 Mon Oct 16 17:54:23 2017
+           Step           Time         Lambda
+              0        0.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53053e+03    7.51957e+02   -5.32481e+04    0.00000e+00    1.26068e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09655e+04    9.78077e+03   -4.11847e+04    3.06343e+02   -1.34605e+02
+
+           Step           Time         Lambda
+           1000       20.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52564e+03    7.74095e+02   -5.29205e+04    0.00000e+00    1.37140e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06194e+04    9.72230e+03   -4.08971e+04    3.04512e+02    2.85240e+00
+
+           Step           Time         Lambda
+           2000       40.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58120e+03    8.26091e+02   -5.26738e+04    0.00000e+00    5.03987e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02614e+04    9.39814e+03   -4.08633e+04    2.94359e+02   -1.79044e+01
+
+           Step           Time         Lambda
+           3000       60.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48887e+03    8.38567e+02   -5.25985e+04    0.00000e+00    6.77184e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02704e+04    9.82018e+03   -4.04502e+04    3.07577e+02    2.76790e+01
+
+           Step           Time         Lambda
+           4000       80.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53081e+03    8.60755e+02   -5.29723e+04    0.00000e+00    2.46420e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05805e+04    9.82023e+03   -4.07603e+04    3.07579e+02   -9.14880e+01
+
+           Step           Time         Lambda
+           5000      100.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47792e+03    7.99504e+02   -5.31123e+04    0.00000e+00    2.48121e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08348e+04    9.80438e+03   -4.10304e+04    3.07082e+02   -6.93258e+01
+
+           Step           Time         Lambda
+           6000      120.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.33266e+03    7.62058e+02   -5.30083e+04    0.00000e+00    3.79386e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09098e+04    9.47292e+03   -4.14369e+04    2.96701e+02   -6.26310e+01
+
+           Step           Time         Lambda
+           7000      140.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41191e+03    7.81451e+02   -5.27694e+04    0.00000e+00    2.26204e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05738e+04    9.92247e+03   -4.06513e+04    3.10781e+02    3.91642e+00
+
+           Step           Time         Lambda
+           8000      160.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44852e+03    7.63940e+02   -5.29174e+04    0.00000e+00    1.49054e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07034e+04    9.35166e+03   -4.13518e+04    2.92903e+02   -1.01987e+02
+
+           Step           Time         Lambda
+           9000      180.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.35457e+03    7.65203e+02   -5.28241e+04    0.00000e+00    4.07843e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07039e+04    9.66984e+03   -4.10341e+04    3.02868e+02   -7.25252e+01
+
+           Step           Time         Lambda
+          10000      200.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50114e+03    7.25112e+02   -5.28156e+04    0.00000e+00    8.21530e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05886e+04    9.70146e+03   -4.08871e+04    3.03859e+02   -1.06232e+02
+
+           Step           Time         Lambda
+          11000      220.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.29714e+03    7.78490e+02   -5.26020e+04    0.00000e+00    1.37422e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05262e+04    9.55410e+03   -4.09721e+04    2.99243e+02   -5.35225e+01
+
+           Step           Time         Lambda
+          12000      240.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.39083e+03    7.70923e+02   -5.28537e+04    0.00000e+00    5.71974e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06914e+04    9.71508e+03   -4.09763e+04    3.04285e+02   -1.63589e+02
+
+           Step           Time         Lambda
+          13000      260.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52062e+03    7.95269e+02   -5.26903e+04    0.00000e+00    1.69757e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03727e+04    9.56315e+03   -4.08095e+04    2.99527e+02   -4.24091e+01
+
+           Step           Time         Lambda
+          14000      280.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54632e+03    7.47872e+02   -5.27811e+04    0.00000e+00    6.20984e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04863e+04    9.59856e+03   -4.08878e+04    3.00636e+02   -1.07911e+02
+
+           Step           Time         Lambda
+          15000      300.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58050e+03    7.40028e+02   -5.28764e+04    0.00000e+00    1.58334e-05
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05559e+04    9.54381e+03   -4.10121e+04    2.98921e+02   -6.19522e+01
+
+           Step           Time         Lambda
+          16000      320.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52677e+03    7.94517e+02   -5.26544e+04    0.00000e+00    1.13661e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03330e+04    9.34991e+03   -4.09831e+04    2.92848e+02   -2.02784e+01
+
+           Step           Time         Lambda
+          17000      340.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57046e+03    7.77120e+02   -5.29879e+04    0.00000e+00    9.53691e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06394e+04    9.52751e+03   -4.11119e+04    2.98410e+02   -1.63265e+02
+
+           Step           Time         Lambda
+          18000      360.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43200e+03    7.54491e+02   -5.30418e+04    0.00000e+00    2.28028e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08551e+04    9.52725e+03   -4.13279e+04    2.98402e+02   -8.10138e+01
+
+           Step           Time         Lambda
+          19000      380.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.62491e+03    7.62872e+02   -5.31888e+04    0.00000e+00    2.68901e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08008e+04    9.76333e+03   -4.10374e+04    3.05797e+02   -5.54086e+01
+
+           Step           Time         Lambda
+          20000      400.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50790e+03    7.37645e+02   -5.30892e+04    0.00000e+00    1.12205e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08426e+04    9.70045e+03   -4.11421e+04    3.03827e+02   -1.38748e+02
+
+           Step           Time         Lambda
+          21000      420.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41307e+03    7.92678e+02   -5.28155e+04    0.00000e+00    8.47841e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06089e+04    9.31815e+03   -4.12907e+04    2.91853e+02   -4.68825e+01
+
+           Step           Time         Lambda
+          22000      440.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57669e+03    6.88975e+02   -5.28862e+04    0.00000e+00    9.52072e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06196e+04    9.34070e+03   -4.12789e+04    2.92559e+02   -3.93360e+01
+
+           Step           Time         Lambda
+          23000      460.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46718e+03    7.96935e+02   -5.30201e+04    0.00000e+00    1.68609e+01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07391e+04    9.28509e+03   -4.14540e+04    2.90818e+02   -8.77108e+01
+
+           Step           Time         Lambda
+          24000      480.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49400e+03    8.39273e+02   -5.28983e+04    0.00000e+00    1.59800e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05635e+04    9.79691e+03   -4.07665e+04    3.06848e+02   -5.02821e+01
+
+           Step           Time         Lambda
+          25000      500.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47338e+03    8.52487e+02   -5.26553e+04    0.00000e+00    1.81470e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03276e+04    1.00441e+04   -4.02836e+04    3.14589e+02   -6.18196e+01
+
+           Step           Time         Lambda
+          26000      520.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45079e+03    7.58448e+02   -5.29397e+04    0.00000e+00    6.45226e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07240e+04    9.47743e+03   -4.12466e+04    2.96842e+02   -1.44410e+02
+
+           Step           Time         Lambda
+          27000      540.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45728e+03    7.56043e+02   -5.24750e+04    0.00000e+00    5.24285e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02564e+04    9.58915e+03   -4.06673e+04    3.00341e+02    5.03808e+01
+
+           Step           Time         Lambda
+          28000      560.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40063e+03    7.60002e+02   -5.28614e+04    0.00000e+00    3.40747e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07004e+04    9.88020e+03   -4.08202e+04    3.09457e+02    5.80849e+01
+
+           Step           Time         Lambda
+          29000      580.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.61202e+03    7.85711e+02   -5.27986e+04    0.00000e+00    6.53974e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04002e+04    9.58083e+03   -4.08194e+04    3.00080e+02   -4.34935e+01
+
+           Step           Time         Lambda
+          30000      600.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56986e+03    8.05407e+02   -5.26493e+04    0.00000e+00    2.73653e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02738e+04    9.63852e+03   -4.06353e+04    3.01887e+02   -2.89445e+01
+
+           Step           Time         Lambda
+          31000      620.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54834e+03    8.33704e+02   -5.31111e+04    0.00000e+00    3.25777e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07287e+04    9.59766e+03   -4.11310e+04    3.00608e+02   -1.93843e+02
+
+           Step           Time         Lambda
+          32000      640.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.36832e+03    7.78869e+02   -5.27035e+04    0.00000e+00    4.31065e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05520e+04    9.71925e+03   -4.08327e+04    3.04416e+02   -4.76090e+01
+
+           Step           Time         Lambda
+          33000      660.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50450e+03    7.78656e+02   -5.30056e+04    0.00000e+00    4.43642e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07180e+04    9.54888e+03   -4.11691e+04    2.99080e+02   -1.48676e+02
+
+           Step           Time         Lambda
+          34000      680.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45684e+03    7.73311e+02   -5.27364e+04    0.00000e+00    6.42725e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05056e+04    9.44142e+03   -4.10642e+04    2.95714e+02   -7.88725e+01
+
+           Step           Time         Lambda
+          35000      700.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47921e+03    7.76260e+02   -5.30057e+04    0.00000e+00    3.06467e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07471e+04    9.58528e+03   -4.11618e+04    3.00220e+02   -1.23448e+02
+
+           Step           Time         Lambda
+          36000      720.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47565e+03    7.89681e+02   -5.27519e+04    0.00000e+00    1.26773e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04853e+04    9.63988e+03   -4.08454e+04    3.01930e+02   -1.41508e+01
+
+           Step           Time         Lambda
+          37000      740.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57903e+03    7.97647e+02   -5.28203e+04    0.00000e+00    4.45629e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04392e+04    9.28754e+03   -4.11516e+04    2.90894e+02   -5.24074e+01
+
+           Step           Time         Lambda
+          38000      760.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51226e+03    7.15595e+02   -5.24473e+04    0.00000e+00    1.92577e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02194e+04    9.57918e+03   -4.06402e+04    3.00029e+02    2.25074e+01
+
+           Step           Time         Lambda
+          39000      780.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45488e+03    8.22979e+02   -5.26213e+04    0.00000e+00    2.01066e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03414e+04    9.43524e+03   -4.09062e+04    2.95520e+02   -9.35522e+01
+
+           Step           Time         Lambda
+          40000      800.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42813e+03    7.88733e+02   -5.27221e+04    0.00000e+00    9.62266e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05052e+04    9.44477e+03   -4.10604e+04    2.95819e+02   -6.48791e+01
+
+           Step           Time         Lambda
+          41000      820.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40952e+03    8.58651e+02   -5.30982e+04    0.00000e+00    7.51293e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08299e+04    9.56592e+03   -4.12640e+04    2.99614e+02   -8.48426e+01
+
+           Step           Time         Lambda
+          42000      840.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46506e+03    7.85406e+02   -5.28192e+04    0.00000e+00    1.39194e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05673e+04    9.74896e+03   -4.08184e+04    3.05347e+02   -2.22906e+01
+
+           Step           Time         Lambda
+          43000      860.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46679e+03    7.80620e+02   -5.26130e+04    0.00000e+00    1.83569e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03638e+04    9.54220e+03   -4.08216e+04    2.98870e+02   -5.24747e+01
+
+           Step           Time         Lambda
+          44000      880.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41434e+03    8.39382e+02   -5.25711e+04    0.00000e+00    4.72725e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03126e+04    9.84443e+03   -4.04682e+04    3.08337e+02    7.06948e+01
+
+           Step           Time         Lambda
+          45000      900.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.64630e+03    8.15935e+02   -5.28868e+04    0.00000e+00    3.83619e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04242e+04    9.41120e+03   -4.10130e+04    2.94767e+02   -8.95309e+01
+
+           Step           Time         Lambda
+          46000      920.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45984e+03    8.16273e+02   -5.29611e+04    0.00000e+00    1.04800e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06848e+04    9.73538e+03   -4.09495e+04    3.04921e+02   -8.91424e+01
+
+           Step           Time         Lambda
+          47000      940.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53971e+03    8.08043e+02   -5.29678e+04    0.00000e+00    1.18551e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06199e+04    9.84255e+03   -4.07774e+04    3.08278e+02   -1.90239e-01
+
+           Step           Time         Lambda
+          48000      960.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44701e+03    7.28136e+02   -5.30070e+04    0.00000e+00    1.60491e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08317e+04    9.47123e+03   -4.13605e+04    2.96648e+02   -1.08053e+02
+
+           Step           Time         Lambda
+          49000      980.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42623e+03    7.56578e+02   -5.27799e+04    0.00000e+00    1.60536e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05955e+04    9.55597e+03   -4.10395e+04    2.99302e+02   -6.21084e+01
+
+           Step           Time         Lambda
+          50000     1000.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43471e+03    7.58042e+02   -5.29389e+04    0.00000e+00    5.33047e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07408e+04    9.28077e+03   -4.14600e+04    2.90682e+02   -1.27079e+02
+
+           Step           Time         Lambda
+          51000     1020.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49337e+03    7.93476e+02   -5.28281e+04    0.00000e+00    2.43688e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05410e+04    9.98833e+03   -4.05527e+04    3.12844e+02   -1.00540e+01
+
+           Step           Time         Lambda
+          52000     1040.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49996e+03    7.96763e+02   -5.31187e+04    0.00000e+00    3.73443e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08220e+04    9.60669e+03   -4.12153e+04    3.00890e+02    5.71109e+00
+
+           Step           Time         Lambda
+          53000     1060.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52132e+03    7.55543e+02   -5.25739e+04    0.00000e+00    1.22785e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02958e+04    9.63171e+03   -4.06641e+04    3.01674e+02   -4.09080e+00
+
+           Step           Time         Lambda
+          54000     1080.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.38701e+03    8.13434e+02   -5.29095e+04    0.00000e+00    2.39651e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07090e+04    9.49903e+03   -4.12100e+04    2.97518e+02   -4.97458e+01
+
+           Step           Time         Lambda
+          55000     1100.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56176e+03    8.56910e+02   -5.28800e+04    0.00000e+00    1.31941e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04612e+04    9.51564e+03   -4.09456e+04    2.98039e+02   -5.17657e+01
+
+           Step           Time         Lambda
+          56000     1120.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47901e+03    8.57347e+02   -5.29948e+04    0.00000e+00    2.93746e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06555e+04    9.50495e+03   -4.11506e+04    2.97704e+02   -8.82752e+01
+
+           Step           Time         Lambda
+          57000     1140.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.37478e+03    8.00921e+02   -5.28269e+04    0.00000e+00    6.48235e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06447e+04    9.47317e+03   -4.11716e+04    2.96709e+02    2.05769e+01
+
+           Step           Time         Lambda
+          58000     1160.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50969e+03    7.93442e+02   -5.28591e+04    0.00000e+00    3.36369e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05556e+04    9.48696e+03   -4.10687e+04    2.97141e+02   -1.19247e+01
+
+           Step           Time         Lambda
+          59000     1180.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.64713e+03    7.32094e+02   -5.28606e+04    0.00000e+00    6.86144e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04806e+04    9.64703e+03   -4.08336e+04    3.02154e+02   -5.87626e+01
+
+           Step           Time         Lambda
+          60000     1200.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51275e+03    7.76779e+02   -5.28149e+04    0.00000e+00    4.10267e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05213e+04    9.70903e+03   -4.08123e+04    3.04096e+02   -5.11831e+01
+
+           Step           Time         Lambda
+          61000     1220.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52170e+03    8.05084e+02   -5.30619e+04    0.00000e+00    1.98370e-04
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07351e+04    9.67459e+03   -4.10605e+04    3.03017e+02   -7.81908e+01
+
+           Step           Time         Lambda
+          62000     1240.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.55111e+03    7.82021e+02   -5.31957e+04    0.00000e+00    2.41400e-04
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08626e+04    9.29363e+03   -4.15690e+04    2.91085e+02   -1.49392e+02
+
+           Step           Time         Lambda
+          63000     1260.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.67247e+03    8.09377e+02   -5.31123e+04    0.00000e+00    1.10159e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06294e+04    9.60846e+03   -4.10209e+04    3.00946e+02   -4.56011e+01
+
+           Step           Time         Lambda
+          64000     1280.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53505e+03    8.72965e+02   -5.28451e+04    0.00000e+00    6.20976e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04308e+04    9.77216e+03   -4.06587e+04    3.06073e+02   -1.08622e+01
+
+           Step           Time         Lambda
+          65000     1300.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41938e+03    7.79783e+02   -5.25902e+04    0.00000e+00    5.48717e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03855e+04    9.83230e+03   -4.05532e+04    3.07957e+02   -3.66799e+01
+
+           Step           Time         Lambda
+          66000     1320.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51040e+03    8.13621e+02   -5.25747e+04    0.00000e+00    1.36758e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02493e+04    9.54438e+03   -4.07049e+04    2.98939e+02    1.10518e+01
+
+           Step           Time         Lambda
+          67000     1340.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50960e+03    8.54448e+02   -5.30104e+04    0.00000e+00    2.36923e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06440e+04    9.75405e+03   -4.08900e+04    3.05506e+02   -6.89456e+01
+
+           Step           Time         Lambda
+          68000     1360.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43227e+03    6.90684e+02   -5.25388e+04    0.00000e+00    1.82589e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04157e+04    9.56894e+03   -4.08467e+04    2.99708e+02   -6.44334e+01
+
+           Step           Time         Lambda
+          69000     1380.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46455e+03    7.42815e+02   -5.29986e+04    0.00000e+00    4.07855e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07912e+04    9.82262e+03   -4.09686e+04    3.07654e+02   -4.73727e+01
+
+           Step           Time         Lambda
+          70000     1400.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47016e+03    7.75796e+02   -5.29706e+04    0.00000e+00    1.31561e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07233e+04    9.63882e+03   -4.10845e+04    3.01897e+02   -9.05925e+01
+
+           Step           Time         Lambda
+          71000     1420.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.60328e+03    7.96494e+02   -5.26561e+04    0.00000e+00    2.91417e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02560e+04    9.50099e+03   -4.07550e+04    2.97580e+02   -1.64598e+02
+
+           Step           Time         Lambda
+          72000     1440.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.33806e+03    8.26944e+02   -5.28175e+04    0.00000e+00    6.70697e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06458e+04    9.52133e+03   -4.11245e+04    2.98217e+02   -8.07258e+01
+
+           Step           Time         Lambda
+          73000     1460.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46483e+03    7.39628e+02   -5.28557e+04    0.00000e+00    5.86186e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06506e+04    9.57639e+03   -4.10742e+04    2.99941e+02   -1.59035e+02
+
+           Step           Time         Lambda
+          74000     1480.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47405e+03    7.85165e+02   -5.29489e+04    0.00000e+00    1.31572e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06883e+04    9.56735e+03   -4.11210e+04    2.99658e+02   -5.93620e+01
+
+           Step           Time         Lambda
+          75000     1500.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.33367e+03    7.22939e+02   -5.28983e+04    0.00000e+00    1.22438e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08416e+04    9.47303e+03   -4.13685e+04    2.96704e+02   -8.46773e+01
+
+           Step           Time         Lambda
+          76000     1520.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57485e+03    7.95430e+02   -5.29479e+04    0.00000e+00    7.11707e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05705e+04    9.42636e+03   -4.11442e+04    2.95242e+02   -8.75841e+01
+
+           Step           Time         Lambda
+          77000     1540.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56855e+03    7.89271e+02   -5.30101e+04    0.00000e+00    6.87660e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06516e+04    9.63548e+03   -4.10161e+04    3.01792e+02   -8.39637e+01
+
+           Step           Time         Lambda
+          78000     1560.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.55489e+03    7.34497e+02   -5.27849e+04    0.00000e+00    2.96956e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04955e+04    9.86493e+03   -4.06306e+04    3.08979e+02   -6.10281e+01
+
+           Step           Time         Lambda
+          79000     1580.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45246e+03    7.86949e+02   -5.28956e+04    0.00000e+00    5.96466e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06503e+04    9.57672e+03   -4.10735e+04    2.99952e+02   -9.56989e+01
+
+           Step           Time         Lambda
+          80000     1600.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58836e+03    8.04413e+02   -5.28613e+04    0.00000e+00    4.50406e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04640e+04    9.57522e+03   -4.08888e+04    2.99905e+02   -1.50128e+02
+
+           Step           Time         Lambda
+          81000     1620.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51451e+03    8.11602e+02   -5.26631e+04    0.00000e+00    9.73294e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03360e+04    9.35225e+03   -4.09837e+04    2.92921e+02   -7.23261e+01
+
+           Step           Time         Lambda
+          82000     1640.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50629e+03    7.96660e+02   -5.27849e+04    0.00000e+00    1.12232e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04818e+04    9.54594e+03   -4.09359e+04    2.98988e+02   -5.50842e+01
+
+           Step           Time         Lambda
+          83000     1660.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54155e+03    7.63731e+02   -5.29542e+04    0.00000e+00    5.95298e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06430e+04    9.83929e+03   -4.08037e+04    3.08176e+02   -6.03881e+01
+
+           Step           Time         Lambda
+          84000     1680.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47895e+03    7.30196e+02   -5.28904e+04    0.00000e+00    1.41664e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06811e+04    9.56077e+03   -4.11203e+04    2.99452e+02   -6.26940e+01
+
+           Step           Time         Lambda
+          85000     1700.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48307e+03    8.46433e+02   -5.29220e+04    0.00000e+00    8.04411e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05844e+04    9.63976e+03   -4.09447e+04    3.01926e+02   -8.60161e+01
+
+           Step           Time         Lambda
+          86000     1720.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45579e+03    7.52729e+02   -5.26048e+04    0.00000e+00    3.94253e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03924e+04    9.51097e+03   -4.08814e+04    2.97892e+02   -3.40231e+01
+
+           Step           Time         Lambda
+          87000     1740.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41908e+03    7.79531e+02   -5.29912e+04    0.00000e+00    4.34263e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07882e+04    9.40930e+03   -4.13789e+04    2.94708e+02   -1.33067e+02
+
+           Step           Time         Lambda
+          88000     1760.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56569e+03    7.17651e+02   -5.27061e+04    0.00000e+00    3.10666e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04224e+04    9.64255e+03   -4.07799e+04    3.02014e+02   -1.56967e+01
+
+           Step           Time         Lambda
+          89000     1780.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44672e+03    8.53347e+02   -5.28645e+04    0.00000e+00    1.58622e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05642e+04    9.52092e+03   -4.10433e+04    2.98204e+02   -1.29298e+02
+
+           Step           Time         Lambda
+          90000     1800.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44972e+03    8.00448e+02   -5.29711e+04    0.00000e+00    1.42139e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07196e+04    9.61491e+03   -4.11046e+04    3.01148e+02   -8.43916e+01
+
+           Step           Time         Lambda
+          91000     1820.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43297e+03    7.54398e+02   -5.28510e+04    0.00000e+00    1.50362e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06621e+04    9.45660e+03   -4.12055e+04    2.96190e+02   -1.37396e+02
+
+           Step           Time         Lambda
+          92000     1840.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44887e+03    8.20717e+02   -5.26569e+04    0.00000e+00    3.10709e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03842e+04    9.61558e+03   -4.07686e+04    3.01169e+02    2.23154e+01
+
+           Step           Time         Lambda
+          93000     1860.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42999e+03    8.30675e+02   -5.30794e+04    0.00000e+00    3.93646e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08184e+04    9.43787e+03   -4.13805e+04    2.95603e+02   -1.35925e+01
+
+           Step           Time         Lambda
+          94000     1880.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.38377e+03    8.30869e+02   -5.30886e+04    0.00000e+00    5.24533e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08739e+04    9.69676e+03   -4.11772e+04    3.03711e+02   -7.30000e+01
+
+           Step           Time         Lambda
+          95000     1900.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46451e+03    7.72549e+02   -5.28307e+04    0.00000e+00    2.62595e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05910e+04    9.66705e+03   -4.09239e+04    3.02781e+02   -1.13699e+02
+
+           Step           Time         Lambda
+          96000     1920.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53921e+03    8.04824e+02   -5.28667e+04    0.00000e+00    1.04367e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05216e+04    9.46624e+03   -4.10553e+04    2.96492e+02   -1.00055e+02
+
+           Step           Time         Lambda
+          97000     1940.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51340e+03    7.57086e+02   -5.31848e+04    0.00000e+00    1.38935e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09142e+04    9.76672e+03   -4.11475e+04    3.05903e+02   -4.23641e+01
+
+           Step           Time         Lambda
+          98000     1960.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47330e+03    8.27783e+02   -5.30149e+04    0.00000e+00    4.39084e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07095e+04    9.67205e+03   -4.10374e+04    3.02938e+02   -4.47365e+01
+
+           Step           Time         Lambda
+          99000     1980.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53636e+03    6.95934e+02   -5.31447e+04    0.00000e+00    3.73006e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09120e+04    9.36939e+03   -4.15426e+04    2.93458e+02   -7.68699e+01
+
+           Step           Time         Lambda
+         100000     2000.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53452e+03    7.28285e+02   -5.30567e+04    0.00000e+00    6.25467e-04
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07939e+04    9.44610e+03   -4.13478e+04    2.95861e+02   -6.86890e+01
+
+           Step           Time         Lambda
+         101000     2020.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40315e+03    7.35143e+02   -5.30276e+04    0.00000e+00    2.89487e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08890e+04    9.55334e+03   -4.13357e+04    2.99220e+02   -7.16069e+01
+
+           Step           Time         Lambda
+         102000     2040.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50450e+03    7.69099e+02   -5.32455e+04    0.00000e+00    3.68092e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09715e+04    9.46853e+03   -4.15030e+04    2.96563e+02   -1.47292e+02
+
+           Step           Time         Lambda
+         103000     2060.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50924e+03    7.35581e+02   -5.29784e+04    0.00000e+00    1.99821e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07334e+04    9.55486e+03   -4.11785e+04    2.99267e+02   -7.76568e+01
+
+           Step           Time         Lambda
+         104000     2080.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54017e+03    8.24180e+02   -5.31595e+04    0.00000e+00    2.43771e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07928e+04    9.57215e+03   -4.12206e+04    2.99809e+02   -6.55081e+01
+
+           Step           Time         Lambda
+         105000     2100.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.64158e+03    7.87332e+02   -5.28059e+04    0.00000e+00    7.58564e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03762e+04    9.74616e+03   -4.06300e+04    3.05259e+02   -6.87230e+01
+
+           Step           Time         Lambda
+         106000     2120.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47413e+03    8.56221e+02   -5.27966e+04    0.00000e+00    2.34799e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04661e+04    9.50891e+03   -4.09572e+04    2.97828e+02   -4.23592e+01
+
+           Step           Time         Lambda
+         107000     2140.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46770e+03    8.43944e+02   -5.26205e+04    0.00000e+00    6.39034e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03025e+04    9.41036e+03   -4.08921e+04    2.94741e+02   -1.45171e+01
+
+           Step           Time         Lambda
+         108000     2160.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58531e+03    8.64662e+02   -5.27266e+04    0.00000e+00    1.04580e+01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02662e+04    9.91826e+03   -4.03479e+04    3.10649e+02    7.74878e+00
+
+           Step           Time         Lambda
+         109000     2180.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43101e+03    7.67598e+02   -5.27445e+04    0.00000e+00    1.17055e+01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05342e+04    9.40935e+03   -4.11249e+04    2.94710e+02   -1.14543e+01
+
+           Step           Time         Lambda
+         110000     2200.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53228e+03    7.51053e+02   -5.29141e+04    0.00000e+00    4.27620e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06265e+04    9.34318e+03   -4.12833e+04    2.92637e+02   -1.20689e+02
+
+           Step           Time         Lambda
+         111000     2220.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.62617e+03    7.76247e+02   -5.29957e+04    0.00000e+00    4.72786e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05928e+04    9.86502e+03   -4.07277e+04    3.08982e+02   -3.40488e+01
+
+           Step           Time         Lambda
+         112000     2240.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.55271e+03    8.53568e+02   -5.29804e+04    0.00000e+00    1.36973e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05727e+04    9.37576e+03   -4.11970e+04    2.93658e+02   -1.10178e+02
+
+           Step           Time         Lambda
+         113000     2260.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52382e+03    8.50554e+02   -5.26408e+04    0.00000e+00    2.48421e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02662e+04    9.54825e+03   -4.07179e+04    2.99060e+02   -4.04136e+01
+
+           Step           Time         Lambda
+         114000     2280.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47815e+03    7.96792e+02   -5.30588e+04    0.00000e+00    3.41969e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07835e+04    9.57423e+03   -4.12093e+04    2.99874e+02   -1.31180e+02
+
+           Step           Time         Lambda
+         115000     2300.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54239e+03    7.96796e+02   -5.28509e+04    0.00000e+00    1.55213e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05102e+04    9.81061e+03   -4.06996e+04    3.07277e+02   -8.57657e+01
+
+           Step           Time         Lambda
+         116000     2320.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50285e+03    7.67297e+02   -5.28236e+04    0.00000e+00    7.14449e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05534e+04    9.50758e+03   -4.10459e+04    2.97786e+02   -1.71977e+01
+
+           Step           Time         Lambda
+         117000     2340.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53966e+03    7.85339e+02   -5.28588e+04    0.00000e+00    2.73323e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05310e+04    9.33835e+03   -4.11927e+04    2.92486e+02   -3.05113e+01
+
+           Step           Time         Lambda
+         118000     2360.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42953e+03    8.21831e+02   -5.29874e+04    0.00000e+00    9.93596e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07350e+04    9.78337e+03   -4.09517e+04    3.06424e+02   -9.18255e+01
+
+           Step           Time         Lambda
+         119000     2380.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40622e+03    7.77518e+02   -5.30020e+04    0.00000e+00    8.85018e-07
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08183e+04    9.35245e+03   -4.14659e+04    2.92927e+02   -1.00309e+02
+
+           Step           Time         Lambda
+         120000     2400.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40773e+03    7.80315e+02   -5.28843e+04    0.00000e+00    4.93879e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06962e+04    9.81598e+03   -4.08802e+04    3.07446e+02    4.12211e+01
+
+           Step           Time         Lambda
+         121000     2420.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50377e+03    8.27198e+02   -5.29289e+04    0.00000e+00    1.25539e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05966e+04    9.63994e+03   -4.09567e+04    3.01932e+02   -7.52530e+01
+
+           Step           Time         Lambda
+         122000     2440.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52032e+03    7.81786e+02   -5.28985e+04    0.00000e+00    1.03893e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05963e+04    9.52296e+03   -4.10733e+04    2.98268e+02   -6.01685e+01
+
+           Step           Time         Lambda
+         123000     2460.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48116e+03    8.23943e+02   -5.26684e+04    0.00000e+00    5.09325e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03627e+04    9.40161e+03   -4.09611e+04    2.94467e+02   -3.49871e+01
+
+           Step           Time         Lambda
+         124000     2480.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50762e+03    7.37603e+02   -5.30327e+04    0.00000e+00    8.15283e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07867e+04    9.40764e+03   -4.13790e+04    2.94656e+02   -4.99250e+01
+
+           Step           Time         Lambda
+         125000     2500.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57213e+03    8.03444e+02   -5.29605e+04    0.00000e+00    5.50914e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05843e+04    9.66332e+03   -4.09210e+04    3.02664e+02   -3.59435e+01
+
+           Step           Time         Lambda
+         126000     2520.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45610e+03    7.94895e+02   -5.27410e+04    0.00000e+00    3.31827e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04897e+04    9.65343e+03   -4.08362e+04    3.02354e+02   -2.44627e+00
+
+           Step           Time         Lambda
+         127000     2540.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.34631e+03    7.77843e+02   -5.27723e+04    0.00000e+00    1.17168e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06470e+04    9.25674e+03   -4.13903e+04    2.89930e+02   -5.94563e+01
+
+           Step           Time         Lambda
+         128000     2560.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43894e+03    8.21344e+02   -5.28994e+04    0.00000e+00    8.38609e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06391e+04    9.55754e+03   -4.10816e+04    2.99351e+02   -1.26854e+02
+
+           Step           Time         Lambda
+         129000     2580.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46187e+03    8.48032e+02   -5.30168e+04    0.00000e+00    2.23110e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07047e+04    9.58397e+03   -4.11207e+04    3.00179e+02   -1.33782e+02
+
+           Step           Time         Lambda
+         130000     2600.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57753e+03    8.10974e+02   -5.30509e+04    0.00000e+00    2.88320e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06621e+04    9.68957e+03   -4.09726e+04    3.03486e+02   -8.34492e+01
+
+           Step           Time         Lambda
+         131000     2620.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41758e+03    7.55086e+02   -5.31241e+04    0.00000e+00    1.02965e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09504e+04    9.57934e+03   -4.13711e+04    3.00034e+02   -1.05173e+02
+
+           Step           Time         Lambda
+         132000     2640.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.63633e+03    8.23210e+02   -5.28211e+04    0.00000e+00    8.34473e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03607e+04    9.42431e+03   -4.09364e+04    2.95178e+02   -5.28848e+01
+
+           Step           Time         Lambda
+         133000     2660.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.55610e+03    7.68386e+02   -5.28397e+04    0.00000e+00    8.92392e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05152e+04    9.76720e+03   -4.07481e+04    3.05918e+02    1.54915e+00
+
+           Step           Time         Lambda
+         134000     2680.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51882e+03    6.82150e+02   -5.32718e+04    0.00000e+00    5.54200e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.10653e+04    9.57189e+03   -4.14934e+04    2.99800e+02   -1.05204e+02
+
+           Step           Time         Lambda
+         135000     2700.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.61548e+03    8.10091e+02   -5.28171e+04    0.00000e+00    1.49165e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03900e+04    9.51143e+03   -4.08786e+04    2.97907e+02   -2.67081e+01
+
+           Step           Time         Lambda
+         136000     2720.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54088e+03    7.84592e+02   -5.28801e+04    0.00000e+00    4.90059e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05497e+04    9.65872e+03   -4.08910e+04    3.02520e+02   -1.41054e+01
+
+           Step           Time         Lambda
+         137000     2740.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.32151e+03    7.99641e+02   -5.27511e+04    0.00000e+00    1.10192e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06289e+04    9.61004e+03   -4.10189e+04    3.00995e+02   -2.78133e+01
+
+           Step           Time         Lambda
+         138000     2760.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52162e+03    7.86108e+02   -5.30544e+04    0.00000e+00    1.79523e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07465e+04    9.55267e+03   -4.11938e+04    2.99199e+02   -8.05439e+01
+
+           Step           Time         Lambda
+         139000     2780.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53547e+03    7.63666e+02   -5.27325e+04    0.00000e+00    2.27872e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04311e+04    9.29823e+03   -4.11329e+04    2.91229e+02    4.15190e+00
+
+           Step           Time         Lambda
+         140000     2800.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.62079e+03    7.40936e+02   -5.28887e+04    0.00000e+00    5.53338e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05270e+04    9.77512e+03   -4.07519e+04    3.06166e+02   -5.95441e+01
+
+           Step           Time         Lambda
+         141000     2820.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.38342e+03    8.36741e+02   -5.29980e+04    0.00000e+00    1.42636e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07777e+04    9.34192e+03   -4.14357e+04    2.92598e+02   -1.07984e+02
+
+           Step           Time         Lambda
+         142000     2840.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56864e+03    7.42828e+02   -5.29706e+04    0.00000e+00    2.10331e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06570e+04    9.71254e+03   -4.09445e+04    3.04206e+02   -1.01045e+02
+
+           Step           Time         Lambda
+         143000     2860.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54085e+03    7.86437e+02   -5.25462e+04    0.00000e+00    1.75188e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02188e+04    9.68373e+03   -4.05351e+04    3.03303e+02    2.39213e+01
+
+           Step           Time         Lambda
+         144000     2880.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58269e+03    7.82429e+02   -5.32178e+04    0.00000e+00    1.65445e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08527e+04    9.58515e+03   -4.12676e+04    3.00216e+02   -1.02734e+02
+
+           Step           Time         Lambda
+         145000     2900.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52298e+03    8.18153e+02   -5.29003e+04    0.00000e+00    1.44673e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05590e+04    9.46354e+03   -4.10955e+04    2.96407e+02   -8.89124e+01
+
+           Step           Time         Lambda
+         146000     2920.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52833e+03    8.18102e+02   -5.30546e+04    0.00000e+00    4.59497e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07077e+04    9.59890e+03   -4.11088e+04    3.00646e+02   -7.39001e+01
+
+           Step           Time         Lambda
+         147000     2940.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.59242e+03    8.15909e+02   -5.27821e+04    0.00000e+00    9.86480e-04
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03738e+04    9.39896e+03   -4.09748e+04    2.94384e+02   -1.02254e+02
+
+           Step           Time         Lambda
+         148000     2960.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44160e+03    7.63587e+02   -5.29083e+04    0.00000e+00    2.44286e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07031e+04    9.70843e+03   -4.09947e+04    3.04077e+02   -1.09902e+02
+
+           Step           Time         Lambda
+         149000     2980.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.33235e+03    7.84713e+02   -5.29820e+04    0.00000e+00    7.55356e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08642e+04    9.70181e+03   -4.11624e+04    3.03870e+02   -9.93126e+01
+
+           Step           Time         Lambda
+         150000     3000.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49724e+03    7.97614e+02   -5.24133e+04    0.00000e+00    1.00051e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.01184e+04    9.69478e+03   -4.04237e+04    3.03650e+02    2.08010e+01
+
+           Step           Time         Lambda
+         151000     3020.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52856e+03    8.11915e+02   -5.27078e+04    0.00000e+00    5.59451e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03617e+04    9.69210e+03   -4.06696e+04    3.03566e+02   -6.09117e+01
+
+           Step           Time         Lambda
+         152000     3040.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40611e+03    8.05284e+02   -5.26560e+04    0.00000e+00    1.07530e+01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04339e+04    9.43541e+03   -4.09984e+04    2.95526e+02   -4.84917e+01
+
+           Step           Time         Lambda
+         153000     3060.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44726e+03    7.23481e+02   -5.27233e+04    0.00000e+00    1.59997e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05524e+04    9.62394e+03   -4.09285e+04    3.01431e+02   -3.01902e+01
+
+           Step           Time         Lambda
+         154000     3080.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54062e+03    8.07306e+02   -5.29042e+04    0.00000e+00    9.77926e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05562e+04    9.62423e+03   -4.09320e+04    3.01440e+02   -6.55812e+01
+
+           Step           Time         Lambda
+         155000     3100.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58124e+03    6.72396e+02   -5.32174e+04    0.00000e+00    3.61890e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09601e+04    9.23557e+03   -4.17246e+04    2.89267e+02   -1.50454e+02
+
+           Step           Time         Lambda
+         156000     3120.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.39155e+03    8.04014e+02   -5.27766e+04    0.00000e+00    3.68553e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05774e+04    9.69751e+03   -4.08799e+04    3.03735e+02   -1.13452e+02
+
+           Step           Time         Lambda
+         157000     3140.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43529e+03    7.91314e+02   -5.29531e+04    0.00000e+00    3.42628e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07265e+04    9.55879e+03   -4.11677e+04    2.99390e+02   -1.07799e+02
+
+           Step           Time         Lambda
+         158000     3160.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51208e+03    8.44194e+02   -5.28403e+04    0.00000e+00    3.14523e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04837e+04    9.65591e+03   -4.08278e+04    3.02432e+02   -4.13158e+01
+
+           Step           Time         Lambda
+         159000     3180.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45391e+03    8.31288e+02   -5.28717e+04    0.00000e+00    1.39302e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05851e+04    9.38934e+03   -4.11958e+04    2.94083e+02   -9.65024e+01
+
+           Step           Time         Lambda
+         160000     3200.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.61047e+03    8.87047e+02   -5.28673e+04    0.00000e+00    9.44129e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03688e+04    9.17765e+03   -4.11912e+04    2.87453e+02   -8.82590e+01
+
+           Step           Time         Lambda
+         161000     3220.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45965e+03    7.58902e+02   -5.31070e+04    0.00000e+00    2.67846e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08882e+04    9.45690e+03   -4.14313e+04    2.96199e+02   -1.19013e+02
+
+           Step           Time         Lambda
+         162000     3240.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.59390e+03    7.85184e+02   -5.29080e+04    0.00000e+00    5.25571e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05284e+04    9.71095e+03   -4.08175e+04    3.04156e+02   -5.79747e+01
+
+           Step           Time         Lambda
+         163000     3260.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42769e+03    7.89225e+02   -5.28674e+04    0.00000e+00    2.13237e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06483e+04    9.37976e+03   -4.12686e+04    2.93783e+02   -1.05984e+02
+
+           Step           Time         Lambda
+         164000     3280.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45585e+03    7.95438e+02   -5.29152e+04    0.00000e+00    4.44030e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06595e+04    9.65989e+03   -4.09996e+04    3.02557e+02   -1.07796e+02
+
+           Step           Time         Lambda
+         165000     3300.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47782e+03    8.40742e+02   -5.28087e+04    0.00000e+00    1.01832e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04892e+04    9.48459e+03   -4.10046e+04    2.97066e+02   -1.26538e+01
+
+           Step           Time         Lambda
+         166000     3320.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43367e+03    8.09943e+02   -5.29354e+04    0.00000e+00    1.47015e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06917e+04    9.67709e+03   -4.10146e+04    3.03095e+02   -8.97530e+01
+
+           Step           Time         Lambda
+         167000     3340.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56744e+03    7.81724e+02   -5.30908e+04    0.00000e+00    6.69172e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07410e+04    9.74831e+03   -4.09927e+04    3.05326e+02   -1.56794e+02
+
+           Step           Time         Lambda
+         168000     3360.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50087e+03    7.98716e+02   -5.30150e+04    0.00000e+00    4.01848e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07114e+04    9.37161e+03   -4.13398e+04    2.93527e+02   -8.90821e+01
+
+           Step           Time         Lambda
+         169000     3380.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56765e+03    7.98937e+02   -5.31163e+04    0.00000e+00    3.09019e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07494e+04    9.41213e+03   -4.13373e+04    2.94797e+02   -6.15435e+01
+
+           Step           Time         Lambda
+         170000     3400.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51907e+03    7.17872e+02   -5.29216e+04    0.00000e+00    1.64675e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06845e+04    9.72039e+03   -4.09641e+04    3.04452e+02   -1.26738e+02
+
+           Step           Time         Lambda
+         171000     3420.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53514e+03    7.32336e+02   -5.31118e+04    0.00000e+00    8.73031e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08435e+04    9.72071e+03   -4.11228e+04    3.04462e+02   -1.45569e+02
+
+           Step           Time         Lambda
+         172000     3440.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40402e+03    8.50547e+02   -5.29631e+04    0.00000e+00    1.15756e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07074e+04    9.54676e+03   -4.11606e+04    2.99013e+02   -1.16691e+02
+
+           Step           Time         Lambda
+         173000     3460.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.38580e+03    7.49326e+02   -5.30570e+04    0.00000e+00    2.93296e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09215e+04    9.82840e+03   -4.10931e+04    3.07835e+02   -4.83208e+01
+
+           Step           Time         Lambda
+         174000     3480.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49900e+03    7.78624e+02   -5.29031e+04    0.00000e+00    1.22549e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06254e+04    9.41470e+03   -4.12107e+04    2.94877e+02   -9.80563e+01
+
+           Step           Time         Lambda
+         175000     3500.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49752e+03    7.57812e+02   -5.27844e+04    0.00000e+00    9.30578e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05290e+04    9.66936e+03   -4.08597e+04    3.02853e+02   -1.06340e+02
+
+           Step           Time         Lambda
+         176000     3520.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41411e+03    7.91537e+02   -5.32957e+04    0.00000e+00    7.27836e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.10893e+04    9.28017e+03   -4.18091e+04    2.90664e+02   -1.47883e+02
+
+           Step           Time         Lambda
+         177000     3540.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53040e+03    7.91668e+02   -5.28364e+04    0.00000e+00    8.28723e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05143e+04    9.56950e+03   -4.09448e+04    2.99726e+02   -2.52896e+01
+
+           Step           Time         Lambda
+         178000     3560.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53585e+03    8.38062e+02   -5.29585e+04    0.00000e+00    4.34275e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05803e+04    9.90508e+03   -4.06752e+04    3.10236e+02    5.98143e+00
+
+           Step           Time         Lambda
+         179000     3580.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.39873e+03    8.54981e+02   -5.29740e+04    0.00000e+00    7.30473e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07195e+04    9.63005e+03   -4.10895e+04    3.01622e+02   -5.75842e+01
+
+           Step           Time         Lambda
+         180000     3600.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52321e+03    7.53343e+02   -5.27421e+04    0.00000e+00    6.07730e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04595e+04    9.77306e+03   -4.06864e+04    3.06101e+02   -9.10570e+01
+
+           Step           Time         Lambda
+         181000     3620.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49194e+03    7.93130e+02   -5.26213e+04    0.00000e+00    5.77685e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03362e+04    9.52033e+03   -4.08159e+04    2.98186e+02   -5.14442e+01
+
+           Step           Time         Lambda
+         182000     3640.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46814e+03    8.09589e+02   -5.24884e+04    0.00000e+00    4.77081e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02106e+04    9.68284e+03   -4.05278e+04    3.03276e+02   -3.90543e+01
+
+           Step           Time         Lambda
+         183000     3660.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57204e+03    7.75544e+02   -5.27563e+04    0.00000e+00    1.92697e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04068e+04    9.70146e+03   -4.07053e+04    3.03859e+02   -7.20095e+01
+
+           Step           Time         Lambda
+         184000     3680.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43749e+03    7.55445e+02   -5.27327e+04    0.00000e+00    2.48148e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05397e+04    9.72112e+03   -4.08186e+04    3.04475e+02   -7.86964e+01
+
+           Step           Time         Lambda
+         185000     3700.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51858e+03    8.40341e+02   -5.28518e+04    0.00000e+00    4.49204e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04924e+04    9.68187e+03   -4.08105e+04    3.03245e+02   -1.44059e+02
+
+           Step           Time         Lambda
+         186000     3720.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48951e+03    8.74863e+02   -5.25265e+04    0.00000e+00    4.57936e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.01576e+04    9.62664e+03   -4.05309e+04    3.01515e+02   -1.56330e+01
+
+           Step           Time         Lambda
+         187000     3740.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45305e+03    7.61589e+02   -5.26564e+04    0.00000e+00    2.18127e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04415e+04    9.82597e+03   -4.06155e+04    3.07759e+02   -3.02318e+01
+
+           Step           Time         Lambda
+         188000     3760.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.61973e+03    8.20517e+02   -5.30746e+04    0.00000e+00    5.86726e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06338e+04    9.64352e+03   -4.09903e+04    3.02044e+02   -7.56892e+01
+
+           Step           Time         Lambda
+         189000     3780.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46297e+03    7.89363e+02   -5.28860e+04    0.00000e+00    1.49864e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06337e+04    9.62319e+03   -4.10105e+04    3.01407e+02    7.60953e-01
+
+           Step           Time         Lambda
+         190000     3800.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.55951e+03    8.24465e+02   -5.27629e+04    0.00000e+00    5.78115e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03731e+04    9.56553e+03   -4.08076e+04    2.99601e+02   -3.81440e+01
+
+           Step           Time         Lambda
+         191000     3820.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57167e+03    8.02094e+02   -5.30265e+04    0.00000e+00    6.21723e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06527e+04    9.67103e+03   -4.09817e+04    3.02906e+02   -1.32954e+02
+
+           Step           Time         Lambda
+         192000     3840.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40837e+03    8.20928e+02   -5.28854e+04    0.00000e+00    1.64180e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06545e+04    1.00148e+04   -4.06397e+04    3.13671e+02   -7.27517e+01
+
+           Step           Time         Lambda
+         193000     3860.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52046e+03    7.57537e+02   -5.27999e+04    0.00000e+00    1.74003e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05202e+04    9.61273e+03   -4.09075e+04    3.01080e+02   -5.67562e+01
+
+           Step           Time         Lambda
+         194000     3880.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40684e+03    8.35434e+02   -5.27134e+04    0.00000e+00    1.10428e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04711e+04    9.52207e+03   -4.09490e+04    2.98240e+02   -4.03592e+01
+
+           Step           Time         Lambda
+         195000     3900.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44198e+03    7.54245e+02   -5.30341e+04    0.00000e+00    6.91615e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08372e+04    9.42025e+03   -4.14169e+04    2.95051e+02   -1.25361e+02
+
+           Step           Time         Lambda
+         196000     3920.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52542e+03    8.18077e+02   -5.27281e+04    0.00000e+00    3.13389e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03842e+04    9.68125e+03   -4.07030e+04    3.03226e+02   -2.55576e+01
+
+           Step           Time         Lambda
+         197000     3940.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54573e+03    7.69296e+02   -5.27490e+04    0.00000e+00    3.05813e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04337e+04    9.54264e+03   -4.08910e+04    2.98884e+02   -5.70955e+01
+
+           Step           Time         Lambda
+         198000     3960.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.55176e+03    8.15185e+02   -5.28658e+04    0.00000e+00    8.50959e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04980e+04    9.35280e+03   -4.11452e+04    2.92938e+02   -1.26294e+02
+
+           Step           Time         Lambda
+         199000     3980.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57370e+03    7.88494e+02   -5.28950e+04    0.00000e+00    6.01468e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05268e+04    9.41821e+03   -4.11086e+04    2.94987e+02   -4.36421e+00
+
+           Step           Time         Lambda
+         200000     4000.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41958e+03    7.37759e+02   -5.30922e+04    0.00000e+00    1.60350e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09347e+04    9.54568e+03   -4.13890e+04    2.98979e+02   -9.79319e+01
+
+           Step           Time         Lambda
+         201000     4020.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54026e+03    7.75042e+02   -5.28214e+04    0.00000e+00    1.68011e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05060e+04    9.53929e+03   -4.09667e+04    2.98779e+02   -1.04377e+02
+
+           Step           Time         Lambda
+         202000     4040.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54689e+03    8.75795e+02   -5.28476e+04    0.00000e+00    3.23707e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04217e+04    9.75071e+03   -4.06710e+04    3.05401e+02   -1.99183e+02
+
+           Step           Time         Lambda
+         203000     4060.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45653e+03    8.12205e+02   -5.31164e+04    0.00000e+00    2.30888e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08453e+04    9.53203e+03   -4.13133e+04    2.98552e+02   -7.96381e+01
+
+           Step           Time         Lambda
+         204000     4080.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50376e+03    7.39147e+02   -5.29134e+04    0.00000e+00    5.95772e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06699e+04    9.64232e+03   -4.10276e+04    3.02006e+02   -1.27879e+00
+
+           Step           Time         Lambda
+         205000     4100.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50084e+03    7.97719e+02   -5.29918e+04    0.00000e+00    1.16123e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06921e+04    9.46797e+03   -4.12241e+04    2.96546e+02   -1.22870e+02
+
+           Step           Time         Lambda
+         206000     4120.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.69848e+03    8.12783e+02   -5.28218e+04    0.00000e+00    1.45395e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03105e+04    9.73565e+03   -4.05749e+04    3.04930e+02   -1.82750e+01
+
+           Step           Time         Lambda
+         207000     4140.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54598e+03    8.07556e+02   -5.25876e+04    0.00000e+00    8.43868e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02340e+04    9.69247e+03   -4.05416e+04    3.03577e+02   -7.72981e+01
+
+           Step           Time         Lambda
+         208000     4160.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.66549e+03    8.25596e+02   -5.29000e+04    0.00000e+00    1.95072e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04069e+04    9.51439e+03   -4.08925e+04    2.98000e+02   -6.14073e+01
+
+           Step           Time         Lambda
+         209000     4180.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52125e+03    7.74942e+02   -5.24809e+04    0.00000e+00    5.87706e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.01841e+04    9.59932e+03   -4.05848e+04    3.00660e+02   -1.11346e+01
+
+           Step           Time         Lambda
+         210000     4200.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53524e+03    8.15510e+02   -5.31763e+04    0.00000e+00    1.13718e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08254e+04    9.48218e+03   -4.13433e+04    2.96991e+02   -1.72560e+02
+
+           Step           Time         Lambda
+         211000     4220.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46135e+03    7.87152e+02   -5.28704e+04    0.00000e+00    2.80619e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06191e+04    9.35361e+03   -4.12655e+04    2.92964e+02   -1.12541e+02
+
+           Step           Time         Lambda
+         212000     4240.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46976e+03    7.84107e+02   -5.30704e+04    0.00000e+00    2.21105e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08165e+04    9.87564e+03   -4.09409e+04    3.09314e+02   -1.35812e+02
+
+           Step           Time         Lambda
+         213000     4260.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44698e+03    8.87533e+02   -5.29024e+04    0.00000e+00    1.63403e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05663e+04    9.73931e+03   -4.08270e+04    3.05044e+02   -2.39458e+01
+
+           Step           Time         Lambda
+         214000     4280.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42871e+03    7.45916e+02   -5.28512e+04    0.00000e+00    5.44339e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06765e+04    9.61107e+03   -4.10655e+04    3.01028e+02   -7.57137e+00
+
+           Step           Time         Lambda
+         215000     4300.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43537e+03    7.57548e+02   -5.30121e+04    0.00000e+00    7.09685e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08185e+04    9.58608e+03   -4.12324e+04    3.00245e+02   -1.29224e+00
+
+           Step           Time         Lambda
+         216000     4320.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57943e+03    7.39044e+02   -5.28797e+04    0.00000e+00    5.87544e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05606e+04    9.60444e+03   -4.09562e+04    3.00820e+02   -7.03048e+00
+
+           Step           Time         Lambda
+         217000     4340.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43884e+03    8.10727e+02   -5.31128e+04    0.00000e+00    5.34534e-04
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08632e+04    9.46391e+03   -4.13993e+04    2.96418e+02   -1.38086e+02
+
+           Step           Time         Lambda
+         218000     4360.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.39145e+03    8.27000e+02   -5.30063e+04    0.00000e+00    9.72566e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07869e+04    9.36200e+03   -4.14249e+04    2.93226e+02   -2.18042e+01
+
+           Step           Time         Lambda
+         219000     4380.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.29864e+03    8.23388e+02   -5.29176e+04    0.00000e+00    1.44675e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07954e+04    9.82995e+03   -4.09654e+04    3.07883e+02   -6.52155e+01
+
+           Step           Time         Lambda
+         220000     4400.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51603e+03    8.57118e+02   -5.29639e+04    0.00000e+00    4.61969e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05908e+04    9.54558e+03   -4.10452e+04    2.98976e+02   -1.16862e+02
+
+           Step           Time         Lambda
+         221000     4420.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52204e+03    7.64511e+02   -5.28651e+04    0.00000e+00    7.68026e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05785e+04    9.75029e+03   -4.08282e+04    3.05388e+02   -7.28130e+01
+
+           Step           Time         Lambda
+         222000     4440.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57139e+03    7.67038e+02   -5.30250e+04    0.00000e+00    5.97647e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06806e+04    9.72121e+03   -4.09594e+04    3.04477e+02   -8.43837e+01
+
+           Step           Time         Lambda
+         223000     4460.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49874e+03    7.78283e+02   -5.27814e+04    0.00000e+00    5.33323e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04991e+04    9.68117e+03   -4.08179e+04    3.03223e+02   -4.52320e+01
+
+           Step           Time         Lambda
+         224000     4480.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43625e+03    8.20374e+02   -5.28602e+04    0.00000e+00    2.43068e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06011e+04    9.20823e+03   -4.13929e+04    2.88410e+02   -1.20397e+02
+
+           Step           Time         Lambda
+         225000     4500.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58555e+03    7.90854e+02   -5.29167e+04    0.00000e+00    2.09572e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05382e+04    9.50195e+03   -4.10363e+04    2.97610e+02   -4.72923e+01
+
+           Step           Time         Lambda
+         226000     4520.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45493e+03    7.98670e+02   -5.28628e+04    0.00000e+00    1.07604e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06081e+04    9.44168e+03   -4.11665e+04    2.95722e+02   -2.23240e+01
+
+           Step           Time         Lambda
+         227000     4540.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.69718e+03    8.18052e+02   -5.27121e+04    0.00000e+00    3.35246e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.01965e+04    9.81816e+03   -4.03783e+04    3.07514e+02   -7.62830e+01
+
+           Step           Time         Lambda
+         228000     4560.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54804e+03    8.68697e+02   -5.27639e+04    0.00000e+00    1.98621e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03452e+04    9.94829e+03   -4.03969e+04    3.11590e+02   -9.23127e+01
+
+           Step           Time         Lambda
+         229000     4580.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.59743e+03    8.27997e+02   -5.26566e+04    0.00000e+00    6.77271e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02311e+04    9.64748e+03   -4.05836e+04    3.02168e+02   -8.40670e+01
+
+           Step           Time         Lambda
+         230000     4600.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48891e+03    7.48376e+02   -5.33068e+04    0.00000e+00    3.33726e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.10662e+04    9.43315e+03   -4.16330e+04    2.95455e+02   -1.89085e+02
+
+           Step           Time         Lambda
+         231000     4620.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42127e+03    7.49386e+02   -5.29660e+04    0.00000e+00    1.00461e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07943e+04    9.48932e+03   -4.13050e+04    2.97214e+02   -1.76801e+01
+
+           Step           Time         Lambda
+         232000     4640.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46128e+03    7.51680e+02   -5.29368e+04    0.00000e+00    6.08870e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07232e+04    9.79515e+03   -4.09280e+04    3.06793e+02   -7.13852e+01
+
+           Step           Time         Lambda
+         233000     4660.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47943e+03    8.16224e+02   -5.28860e+04    0.00000e+00    1.41782e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05903e+04    9.99865e+03   -4.05917e+04    3.13167e+02   -2.99562e+01
+
+           Step           Time         Lambda
+         234000     4680.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53810e+03    7.33625e+02   -5.30917e+04    0.00000e+00    1.83433e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08182e+04    9.28991e+03   -4.15282e+04    2.90969e+02   -8.28095e+01
+
+           Step           Time         Lambda
+         235000     4700.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49728e+03    7.25454e+02   -5.27533e+04    0.00000e+00    3.88427e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05302e+04    9.50967e+03   -4.10205e+04    2.97852e+02   -1.36725e+01
+
+           Step           Time         Lambda
+         236000     4720.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43074e+03    7.88954e+02   -5.27587e+04    0.00000e+00    1.80818e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05372e+04    1.00034e+04   -4.05338e+04    3.13314e+02   -1.04069e+02
+
+           Step           Time         Lambda
+         237000     4740.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47827e+03    8.20212e+02   -5.32020e+04    0.00000e+00    1.41686e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09034e+04    9.68541e+03   -4.12180e+04    3.03356e+02   -1.76179e+02
+
+           Step           Time         Lambda
+         238000     4760.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50616e+03    8.14708e+02   -5.30101e+04    0.00000e+00    1.30546e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06891e+04    9.66839e+03   -4.10207e+04    3.02823e+02   -1.12121e+02
+
+           Step           Time         Lambda
+         239000     4780.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42810e+03    7.43870e+02   -5.31434e+04    0.00000e+00    1.40081e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09700e+04    9.80895e+03   -4.11610e+04    3.07226e+02   -1.12749e+02
+
+           Step           Time         Lambda
+         240000     4800.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53293e+03    8.26151e+02   -5.30832e+04    0.00000e+00    1.94152e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07222e+04    9.30302e+03   -4.14192e+04    2.91379e+02   -1.16077e+02
+
+           Step           Time         Lambda
+         241000     4820.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44916e+03    7.42169e+02   -5.30160e+04    0.00000e+00    7.38057e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08239e+04    9.48561e+03   -4.13383e+04    2.97098e+02   -1.05455e+02
+
+           Step           Time         Lambda
+         242000     4840.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50501e+03    8.91190e+02   -5.30394e+04    0.00000e+00    1.06484e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06421e+04    9.48627e+03   -4.11559e+04    2.97119e+02   -1.06898e+02
+
+           Step           Time         Lambda
+         243000     4860.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.38654e+03    8.09527e+02   -5.26968e+04    0.00000e+00    2.41980e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05005e+04    9.64988e+03   -4.08506e+04    3.02243e+02   -5.88999e+01
+
+           Step           Time         Lambda
+         244000     4880.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51001e+03    8.66334e+02   -5.29707e+04    0.00000e+00    1.13204e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05932e+04    9.46007e+03   -4.11331e+04    2.96298e+02   -8.86150e+01
+
+           Step           Time         Lambda
+         245000     4900.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45356e+03    7.99847e+02   -5.31007e+04    0.00000e+00    4.15423e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08473e+04    9.70499e+03   -4.11423e+04    3.03969e+02   -1.81451e+02
+
+           Step           Time         Lambda
+         246000     4920.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51358e+03    8.25086e+02   -5.26983e+04    0.00000e+00    9.44084e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03596e+04    9.56517e+03   -4.07944e+04    2.99590e+02   -6.14841e+01
+
+           Step           Time         Lambda
+         247000     4940.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.39490e+03    8.74528e+02   -5.30316e+04    0.00000e+00    2.36739e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07599e+04    9.83810e+03   -4.09218e+04    3.08138e+02   -4.00874e+01
+
+           Step           Time         Lambda
+         248000     4960.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57383e+03    8.36327e+02   -5.28679e+04    0.00000e+00    4.59465e-04
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04577e+04    9.81264e+03   -4.06451e+04    3.07341e+02   -7.56999e+01
+
+           Step           Time         Lambda
+         249000     4980.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.61237e+03    7.96739e+02   -5.31839e+04    0.00000e+00    1.22349e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07747e+04    9.58605e+03   -4.11886e+04    3.00244e+02   -1.16912e+02
+
+           Step           Time         Lambda
+         250000     5000.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40819e+03    7.12201e+02   -5.26514e+04    0.00000e+00    2.69293e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05307e+04    9.48387e+03   -4.10469e+04    2.97043e+02   -7.78975e+01
+
+           Step           Time         Lambda
+         251000     5020.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52131e+03    7.54794e+02   -5.26802e+04    0.00000e+00    2.41833e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04017e+04    9.34791e+03   -4.10538e+04    2.92785e+02    2.70149e+01
+
+           Step           Time         Lambda
+         252000     5040.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43072e+03    7.59414e+02   -5.28892e+04    0.00000e+00    7.71862e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06983e+04    9.92371e+03   -4.07746e+04    3.10820e+02   -7.61583e+01
+
+           Step           Time         Lambda
+         253000     5060.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44262e+03    7.33649e+02   -5.28277e+04    0.00000e+00    2.83512e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06514e+04    9.52385e+03   -4.11276e+04    2.98296e+02   -5.99998e+01
+
+           Step           Time         Lambda
+         254000     5080.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43554e+03    7.82178e+02   -5.27102e+04    0.00000e+00    8.12501e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04917e+04    9.76062e+03   -4.07311e+04    3.05712e+02   -6.00301e+01
+
+           Step           Time         Lambda
+         255000     5100.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51881e+03    8.10713e+02   -5.27019e+04    0.00000e+00    4.32275e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03720e+04    9.60618e+03   -4.07658e+04    3.00874e+02    1.57267e+00
+
+           Step           Time         Lambda
+         256000     5120.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54007e+03    8.34773e+02   -5.28831e+04    0.00000e+00    2.39390e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05080e+04    9.56360e+03   -4.09444e+04    2.99541e+02   -9.82064e+01
+
+           Step           Time         Lambda
+         257000     5140.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47889e+03    7.66471e+02   -5.30992e+04    0.00000e+00    1.86999e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08537e+04    9.57081e+03   -4.12829e+04    2.99767e+02   -1.98714e+02
+
+           Step           Time         Lambda
+         258000     5160.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.55092e+03    7.81776e+02   -5.28838e+04    0.00000e+00    1.45715e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05496e+04    9.56939e+03   -4.09802e+04    2.99722e+02   -1.04146e+02
+
+           Step           Time         Lambda
+         259000     5180.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42258e+03    7.84084e+02   -5.32282e+04    0.00000e+00    1.63060e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.10214e+04    9.63933e+03   -4.13821e+04    3.01913e+02   -1.82365e+02
+
+           Step           Time         Lambda
+         260000     5200.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49944e+03    7.57712e+02   -5.30710e+04    0.00000e+00    4.65695e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08134e+04    9.68615e+03   -4.11272e+04    3.03379e+02   -7.10842e+01
+
+           Step           Time         Lambda
+         261000     5220.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49926e+03    7.48891e+02   -5.29103e+04    0.00000e+00    1.79869e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06621e+04    9.81014e+03   -4.08520e+04    3.07263e+02   -1.11505e+02
+
+           Step           Time         Lambda
+         262000     5240.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42038e+03    8.04006e+02   -5.26739e+04    0.00000e+00    7.28623e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04487e+04    9.54686e+03   -4.09019e+04    2.99016e+02   -6.72911e+01
+
+           Step           Time         Lambda
+         263000     5260.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43834e+03    7.90639e+02   -5.29528e+04    0.00000e+00    2.34479e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07215e+04    9.45968e+03   -4.12618e+04    2.96286e+02   -3.75869e+01
+
+           Step           Time         Lambda
+         264000     5280.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52902e+03    7.83560e+02   -5.29617e+04    0.00000e+00    1.20441e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06479e+04    9.58033e+03   -4.10675e+04    3.00065e+02   -4.64531e+01
+
+           Step           Time         Lambda
+         265000     5300.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50965e+03    7.83390e+02   -5.25703e+04    0.00000e+00    5.01386e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02768e+04    9.59302e+03   -4.06838e+04    3.00462e+02    1.12864e+01
+
+           Step           Time         Lambda
+         266000     5320.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.60010e+03    7.27850e+02   -5.28144e+04    0.00000e+00    4.90181e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04860e+04    9.27070e+03   -4.12153e+04    2.90367e+02   -1.25190e+02
+
+           Step           Time         Lambda
+         267000     5340.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50467e+03    8.20016e+02   -5.28571e+04    0.00000e+00    3.75843e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05286e+04    9.68518e+03   -4.08435e+04    3.03349e+02   -1.41993e+02
+
+           Step           Time         Lambda
+         268000     5360.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48063e+03    7.84870e+02   -5.28960e+04    0.00000e+00    2.92773e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06275e+04    9.61988e+03   -4.10077e+04    3.01304e+02   -9.22510e+01
+
+           Step           Time         Lambda
+         269000     5380.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45759e+03    8.13355e+02   -5.31244e+04    0.00000e+00    5.88265e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08529e+04    9.40546e+03   -4.14474e+04    2.94588e+02   -5.56095e+01
+
+           Step           Time         Lambda
+         270000     5400.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50638e+03    7.52798e+02   -5.26459e+04    0.00000e+00    1.69311e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03866e+04    9.68399e+03   -4.07026e+04    3.03311e+02   -1.37070e+01
+
+           Step           Time         Lambda
+         271000     5420.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.39094e+03    8.10725e+02   -5.30953e+04    0.00000e+00    2.02577e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08916e+04    9.71262e+03   -4.11790e+04    3.04208e+02   -5.10040e+01
+
+           Step           Time         Lambda
+         272000     5440.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46197e+03    7.79267e+02   -5.26908e+04    0.00000e+00    1.82173e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04478e+04    9.66087e+03   -4.07869e+04    3.02587e+02   -6.06167e+01
+
+           Step           Time         Lambda
+         273000     5460.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54900e+03    8.42208e+02   -5.27693e+04    0.00000e+00    4.14943e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03740e+04    9.30494e+03   -4.10690e+04    2.91439e+02   -4.13609e+01
+
+           Step           Time         Lambda
+         274000     5480.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43531e+03    7.83433e+02   -5.26704e+04    0.00000e+00    1.46117e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04515e+04    9.56330e+03   -4.08882e+04    2.99532e+02   -7.83021e+00
+
+           Step           Time         Lambda
+         275000     5500.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49201e+03    8.65203e+02   -5.29548e+04    0.00000e+00    2.00026e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05975e+04    9.46825e+03   -4.11293e+04    2.96554e+02   -1.30875e+02
+
+           Step           Time         Lambda
+         276000     5520.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.63754e+03    7.68760e+02   -5.28266e+04    0.00000e+00    3.65908e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04167e+04    9.68733e+03   -4.07293e+04    3.03416e+02   -5.64774e+01
+
+           Step           Time         Lambda
+         277000     5540.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47264e+03    7.16967e+02   -5.30901e+04    0.00000e+00    4.52498e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08960e+04    9.58120e+03   -4.13148e+04    3.00092e+02   -8.59587e+01
+
+           Step           Time         Lambda
+         278000     5560.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.40532e+03    7.92291e+02   -5.31484e+04    0.00000e+00    1.32410e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09494e+04    9.26027e+03   -4.16892e+04    2.90040e+02   -9.45401e+01
+
+           Step           Time         Lambda
+         279000     5580.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50264e+03    7.61447e+02   -5.29675e+04    0.00000e+00    1.47681e-05
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07034e+04    9.21461e+03   -4.14888e+04    2.88610e+02   -4.32667e+01
+
+           Step           Time         Lambda
+         280000     5600.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48121e+03    8.45075e+02   -5.29342e+04    0.00000e+00    1.55466e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06064e+04    9.78013e+03   -4.08262e+04    3.06323e+02   -7.53626e+01
+
+           Step           Time         Lambda
+         281000     5620.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51652e+03    8.34839e+02   -5.28246e+04    0.00000e+00    1.75800e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04730e+04    9.69805e+03   -4.07750e+04    3.03752e+02   -9.21977e+01
+
+           Step           Time         Lambda
+         282000     5640.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45864e+03    7.29975e+02   -5.26711e+04    0.00000e+00    3.48713e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04825e+04    9.73918e+03   -4.07433e+04    3.05040e+02   -6.57596e+01
+
+           Step           Time         Lambda
+         283000     5660.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49316e+03    8.01769e+02   -5.26414e+04    0.00000e+00    9.46591e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03465e+04    9.45194e+03   -4.08945e+04    2.96043e+02    1.13218e+01
+
+           Step           Time         Lambda
+         284000     5680.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53831e+03    8.45730e+02   -5.26926e+04    0.00000e+00    4.16174e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03044e+04    9.72727e+03   -4.05771e+04    3.04667e+02   -5.44997e+01
+
+           Step           Time         Lambda
+         285000     5700.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52771e+03    8.12397e+02   -5.30242e+04    0.00000e+00    2.82009e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06841e+04    9.75730e+03   -4.09268e+04    3.05608e+02   -4.81915e+01
+
+           Step           Time         Lambda
+         286000     5720.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45759e+03    8.32231e+02   -5.27234e+04    0.00000e+00    1.29172e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04323e+04    9.50393e+03   -4.09284e+04    2.97672e+02   -6.23305e+01
+
+           Step           Time         Lambda
+         287000     5740.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53316e+03    8.18683e+02   -5.31797e+04    0.00000e+00    7.65330e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.08271e+04    9.53508e+03   -4.12920e+04    2.98648e+02   -1.03003e+02
+
+           Step           Time         Lambda
+         288000     5760.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50837e+03    7.73451e+02   -5.27935e+04    0.00000e+00    2.85304e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05114e+04    9.56418e+03   -4.09472e+04    2.99559e+02   -4.91437e+01
+
+           Step           Time         Lambda
+         289000     5780.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.60341e+03    7.97046e+02   -5.28154e+04    0.00000e+00    4.05990e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04109e+04    9.54486e+03   -4.08660e+04    2.98954e+02    4.58976e+00
+
+           Step           Time         Lambda
+         290000     5800.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56290e+03    7.23486e+02   -5.30265e+04    0.00000e+00    3.62211e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07365e+04    9.68189e+03   -4.10546e+04    3.03246e+02   -1.39968e+02
+
+           Step           Time         Lambda
+         291000     5820.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44020e+03    7.36698e+02   -5.28374e+04    0.00000e+00    1.35932e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06603e+04    9.58142e+03   -4.10789e+04    3.00099e+02   -7.05369e+01
+
+           Step           Time         Lambda
+         292000     5840.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52617e+03    7.18009e+02   -5.29564e+04    0.00000e+00    1.57071e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07122e+04    9.38927e+03   -4.13230e+04    2.94081e+02   -9.88402e+01
+
+           Step           Time         Lambda
+         293000     5860.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49156e+03    7.92382e+02   -5.26703e+04    0.00000e+00    1.40108e-04
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03864e+04    9.53126e+03   -4.08551e+04    2.98528e+02   -5.08851e+01
+
+           Step           Time         Lambda
+         294000     5880.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42501e+03    8.34246e+02   -5.27695e+04    0.00000e+00    1.82422e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05084e+04    9.67295e+03   -4.08355e+04    3.02966e+02   -5.10196e+01
+
+           Step           Time         Lambda
+         295000     5900.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.59090e+03    7.60981e+02   -5.27271e+04    0.00000e+00    1.40925e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03738e+04    9.63410e+03   -4.07397e+04    3.01749e+02   -8.10989e+01
+
+           Step           Time         Lambda
+         296000     5920.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52223e+03    8.25579e+02   -5.28026e+04    0.00000e+00    9.24748e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04538e+04    9.65734e+03   -4.07965e+04    3.02477e+02   -1.32757e+01
+
+           Step           Time         Lambda
+         297000     5940.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.58883e+03    7.58919e+02   -5.29583e+04    0.00000e+00    5.20616e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06105e+04    9.55351e+03   -4.10570e+04    2.99225e+02   -5.21216e+01
+
+           Step           Time         Lambda
+         298000     5960.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41091e+03    8.76758e+02   -5.29153e+04    0.00000e+00    2.22995e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06276e+04    9.41726e+03   -4.12103e+04    2.94957e+02   -9.96687e+01
+
+           Step           Time         Lambda
+         299000     5980.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.38649e+03    6.99026e+02   -5.28373e+04    0.00000e+00    7.77045e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07518e+04    9.49785e+03   -4.12540e+04    2.97481e+02   -9.16610e+01
+
+           Step           Time         Lambda
+         300000     6000.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.34461e+03    8.60735e+02   -5.27734e+04    0.00000e+00    2.08371e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05660e+04    9.36278e+03   -4.12032e+04    2.93251e+02   -1.26329e+02
+
+           Step           Time         Lambda
+         301000     6020.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49052e+03    8.40401e+02   -5.29272e+04    0.00000e+00    8.68837e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05954e+04    9.69037e+03   -4.09051e+04    3.03511e+02   -9.46925e+01
+
+           Step           Time         Lambda
+         302000     6040.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57684e+03    7.77024e+02   -5.27647e+04    0.00000e+00    3.98289e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04104e+04    9.44453e+03   -4.09659e+04    2.95811e+02   -1.41335e+02
+
+           Step           Time         Lambda
+         303000     6060.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53483e+03    7.88063e+02   -5.30758e+04    0.00000e+00    3.32110e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07496e+04    9.60460e+03   -4.11450e+04    3.00825e+02   -6.66449e+01
+
+           Step           Time         Lambda
+         304000     6080.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49159e+03    8.53679e+02   -5.28481e+04    0.00000e+00    4.20680e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04986e+04    9.73341e+03   -4.07652e+04    3.04859e+02   -2.58898e+01
+
+           Step           Time         Lambda
+         305000     6100.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57973e+03    8.17824e+02   -5.28454e+04    0.00000e+00    2.68838e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04452e+04    9.65139e+03   -4.07938e+04    3.02291e+02   -8.59690e+01
+
+           Step           Time         Lambda
+         306000     6120.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45411e+03    7.98998e+02   -5.27730e+04    0.00000e+00    1.43417e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05198e+04    9.45781e+03   -4.10620e+04    2.96227e+02   -5.58489e+01
+
+           Step           Time         Lambda
+         307000     6140.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44510e+03    8.25144e+02   -5.32719e+04    0.00000e+00    2.07061e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.09996e+04    9.62014e+03   -4.13795e+04    3.01312e+02   -1.36693e+02
+
+           Step           Time         Lambda
+         308000     6160.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.47549e+03    8.61319e+02   -5.28745e+04    0.00000e+00    8.53412e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05369e+04    9.52293e+03   -4.10140e+04    2.98267e+02   -8.80508e+01
+
+           Step           Time         Lambda
+         309000     6180.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51922e+03    7.79234e+02   -5.29620e+04    0.00000e+00    4.73186e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06588e+04    9.62137e+03   -4.10374e+04    3.01350e+02   -9.10470e+01
+
+           Step           Time         Lambda
+         310000     6200.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46411e+03    7.99012e+02   -5.27622e+04    0.00000e+00    1.15055e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04980e+04    9.68052e+03   -4.08174e+04    3.03203e+02   -3.98805e+01
+
+           Step           Time         Lambda
+         311000     6220.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.59584e+03    8.37691e+02   -5.25738e+04    0.00000e+00    1.96985e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.01401e+04    9.49529e+03   -4.06448e+04    2.97401e+02   -2.82256e+01
+
+           Step           Time         Lambda
+         312000     6240.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.41124e+03    7.40954e+02   -5.27913e+04    0.00000e+00    3.42276e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06388e+04    9.29728e+03   -4.13415e+04    2.91199e+02   -1.06476e+02
+
+           Step           Time         Lambda
+         313000     6260.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50985e+03    7.05201e+02   -5.27015e+04    0.00000e+00    2.60317e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04838e+04    9.50370e+03   -4.09801e+04    2.97665e+02   -3.86444e+01
+
+           Step           Time         Lambda
+         314000     6280.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49259e+03    7.89912e+02   -5.27243e+04    0.00000e+00    1.48703e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04418e+04    9.38126e+03   -4.10605e+04    2.93830e+02   -1.35802e+02
+
+           Step           Time         Lambda
+         315000     6300.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56205e+03    8.48420e+02   -5.28478e+04    0.00000e+00    3.85148e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04370e+04    9.61536e+03   -4.08216e+04    3.01162e+02   -1.05740e+02
+
+           Step           Time         Lambda
+         316000     6320.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.54238e+03    8.06859e+02   -5.27331e+04    0.00000e+00    2.03271e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03818e+04    9.36904e+03   -4.10128e+04    2.93447e+02   -2.73173e+01
+
+           Step           Time         Lambda
+         317000     6340.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44378e+03    7.58675e+02   -5.29110e+04    0.00000e+00    8.02158e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07077e+04    9.45222e+03   -4.12555e+04    2.96052e+02   -8.61936e+01
+
+           Step           Time         Lambda
+         318000     6360.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46803e+03    8.14285e+02   -5.28535e+04    0.00000e+00    2.28283e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05689e+04    9.78892e+03   -4.07799e+04    3.06598e+02   -5.58719e+01
+
+           Step           Time         Lambda
+         319000     6380.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49670e+03    8.05876e+02   -5.29300e+04    0.00000e+00    2.52013e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06272e+04    9.59395e+03   -4.10333e+04    3.00491e+02   -1.18885e+02
+
+           Step           Time         Lambda
+         320000     6400.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52595e+03    7.46695e+02   -5.28915e+04    0.00000e+00    1.20658e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06177e+04    9.55511e+03   -4.10626e+04    2.99275e+02   -1.12100e+02
+
+           Step           Time         Lambda
+         321000     6420.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.39563e+03    7.29692e+02   -5.27819e+04    0.00000e+00    3.66837e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06562e+04    9.80206e+03   -4.08541e+04    3.07010e+02   -5.29447e+01
+
+           Step           Time         Lambda
+         322000     6440.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51020e+03    8.12293e+02   -5.28253e+04    0.00000e+00    2.55674e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05003e+04    9.58560e+03   -4.09147e+04    3.00230e+02   -5.33526e+01
+
+           Step           Time         Lambda
+         323000     6460.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.60534e+03    8.02467e+02   -5.30536e+04    0.00000e+00    7.69825e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06381e+04    9.49184e+03   -4.11463e+04    2.97293e+02   -1.08005e+02
+
+           Step           Time         Lambda
+         324000     6480.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45272e+03    8.25867e+02   -5.29346e+04    0.00000e+00    1.77453e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06542e+04    1.02558e+04   -4.03984e+04    3.21223e+02   -2.90911e+01
+
+           Step           Time         Lambda
+         325000     6500.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51569e+03    7.44815e+02   -5.27875e+04    0.00000e+00    4.39639e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05265e+04    9.43468e+03   -4.10918e+04    2.95503e+02    6.44976e+01
+
+           Step           Time         Lambda
+         326000     6520.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.51896e+03    8.45705e+02   -5.29649e+04    0.00000e+00    4.99968e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06001e+04    9.51828e+03   -4.10819e+04    2.98121e+02   -5.60775e+01
+
+           Step           Time         Lambda
+         327000     6540.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43749e+03    7.81373e+02   -5.28594e+04    0.00000e+00    7.49666e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06405e+04    9.69235e+03   -4.09481e+04    3.03574e+02   -7.97100e+01
+
+           Step           Time         Lambda
+         328000     6560.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.52085e+03    9.01970e+02   -5.28836e+04    0.00000e+00    7.22453e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04600e+04    9.68405e+03   -4.07760e+04    3.03313e+02   -7.30089e+01
+
+           Step           Time         Lambda
+         329000     6580.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56549e+03    7.93567e+02   -5.29866e+04    0.00000e+00    6.05351e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06275e+04    9.79037e+03   -4.08371e+04    3.06643e+02   -7.88982e+01
+
+           Step           Time         Lambda
+         330000     6600.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53697e+03    7.57822e+02   -5.28197e+04    0.00000e+00    3.20957e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05248e+04    9.69789e+03   -4.08270e+04    3.03747e+02   -7.85736e+01
+
+           Step           Time         Lambda
+         331000     6620.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50404e+03    8.01438e+02   -5.26713e+04    0.00000e+00    3.20803e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.03655e+04    9.89768e+03   -4.04678e+04    3.10005e+02   -3.12820e+01
+
+           Step           Time         Lambda
+         332000     6640.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50938e+03    8.96333e+02   -5.28899e+04    0.00000e+00    3.20449e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04810e+04    9.72916e+03   -4.07518e+04    3.04726e+02   -4.83257e+01
+
+           Step           Time         Lambda
+         333000     6660.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56234e+03    8.11212e+02   -5.29440e+04    0.00000e+00    1.94478e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05703e+04    9.43682e+03   -4.11335e+04    2.95570e+02   -1.27147e+02
+
+           Step           Time         Lambda
+         334000     6680.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.61489e+03    6.87735e+02   -5.30367e+04    0.00000e+00    5.76361e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07283e+04    9.53787e+03   -4.11905e+04    2.98735e+02   -6.85477e+01
+
+           Step           Time         Lambda
+         335000     6700.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49058e+03    7.49885e+02   -5.25196e+04    0.00000e+00    1.27133e-05
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02791e+04    9.85668e+03   -4.04225e+04    3.08720e+02    5.66603e+01
+
+           Step           Time         Lambda
+         336000     6720.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46751e+03    8.38685e+02   -5.28250e+04    0.00000e+00    2.51194e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05188e+04    9.52533e+03   -4.09935e+04    2.98342e+02   -4.96632e+01
+
+           Step           Time         Lambda
+         337000     6740.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45423e+03    8.46300e+02   -5.28802e+04    0.00000e+00    1.21818e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05785e+04    9.56107e+03   -4.10174e+04    2.99462e+02   -4.95007e+00
+
+           Step           Time         Lambda
+         338000     6760.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.42900e+03    7.44024e+02   -5.27647e+04    0.00000e+00    1.46339e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05915e+04    9.76234e+03   -4.08292e+04    3.05766e+02   -1.93337e+01
+
+           Step           Time         Lambda
+         339000     6780.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43294e+03    7.93277e+02   -5.27194e+04    0.00000e+00    1.48950e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04931e+04    9.63850e+03   -4.08546e+04    3.01887e+02   -7.00233e+00
+
+           Step           Time         Lambda
+         340000     6800.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.50717e+03    7.89616e+02   -5.27871e+04    0.00000e+00    6.51043e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04902e+04    9.54124e+03   -4.09490e+04    2.98840e+02   -8.06545e+01
+
+           Step           Time         Lambda
+         341000     6820.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.43808e+03    7.96671e+02   -5.28778e+04    0.00000e+00    3.51344e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06427e+04    9.48082e+03   -4.11619e+04    2.96948e+02   -3.54602e+01
+
+           Step           Time         Lambda
+         342000     6840.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56540e+03    8.02479e+02   -5.29167e+04    0.00000e+00    3.55310e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05485e+04    9.54584e+03   -4.10027e+04    2.98985e+02   -1.17323e+02
+
+           Step           Time         Lambda
+         343000     6860.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.44924e+03    7.83821e+02   -5.29745e+04    0.00000e+00    8.16046e-03
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07415e+04    9.64272e+03   -4.10988e+04    3.02019e+02   -9.29557e+01
+
+           Step           Time         Lambda
+         344000     6880.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53324e+03    6.85500e+02   -5.26805e+04    0.00000e+00    2.44958e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04593e+04    9.79685e+03   -4.06625e+04    3.06847e+02   -2.65414e+01
+
+           Step           Time         Lambda
+         345000     6900.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.57606e+03    7.46156e+02   -5.25315e+04    0.00000e+00    1.57603e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02091e+04    9.50641e+03   -4.07027e+04    2.97749e+02   -4.70295e+01
+
+           Step           Time         Lambda
+         346000     6920.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.45598e+03    7.71078e+02   -5.24943e+04    0.00000e+00    2.38904e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.02648e+04    9.77389e+03   -4.04909e+04    3.06127e+02   -5.40301e+01
+
+           Step           Time         Lambda
+         347000     6940.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.48016e+03    7.77893e+02   -5.30038e+04    0.00000e+00    3.28155e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.07425e+04    9.66692e+03   -4.10755e+04    3.02777e+02   -5.89336e+01
+
+           Step           Time         Lambda
+         348000     6960.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.56164e+03    7.66294e+02   -5.29739e+04    0.00000e+00    9.46610e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06450e+04    9.45495e+03   -4.11900e+04    2.96138e+02   -9.88930e+01
+
+           Step           Time         Lambda
+         349000     6980.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.46906e+03    7.49844e+02   -5.26797e+04    0.00000e+00    8.82632e-02
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.04607e+04    9.52269e+03   -4.09380e+04    2.98259e+02   -3.31771e+01
+
+           Step           Time         Lambda
+         350000     7000.00000        0.00000
+
+Writing checkpoint, step 350000 at Mon Oct 16 17:55:49 2017
+
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.53426e+03    7.70034e+02   -5.29932e+04    0.00000e+00    6.32007e-01
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.06883e+04    9.53512e+03   -4.11532e+04    2.98649e+02   -6.91073e+01
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 350001 steps using 3501 frames
+
+   Energies (kJ/mol)
+           Bond       G96Angle        LJ (SR)   Coulomb (SR)   COM Pull En.
+    1.49673e+03    7.90389e+02   -5.28743e+04    0.00000e+00    1.39325e+00
+      Potential    Kinetic En.   Total Energy    Temperature Pressure (bar)
+   -5.05858e+04    9.57793e+03   -4.10079e+04    2.99990e+02   -6.72459e+01
+
+          Box-X          Box-Y          Box-Z
+    6.00000e+00    6.00000e+00    8.51933e+00
+
+   Total Virial (kJ/mol)
+    4.11845e+03   -7.94801e+00    4.81676e+00
+   -7.94803e+00    4.13773e+03    8.43564e+00
+    4.81674e+00    8.43563e+00    3.18505e+03
+
+   Pressure (bar)
+   -1.00315e+02    9.82585e-01   -5.10033e-01
+    9.82587e-01   -1.02623e+02   -9.04517e-01
+   -5.10032e-01   -9.04516e-01    1.20059e+00
+
+  Epot (kJ/mol)        Coul-SR          LJ-SR   
+            B-B    0.00000e+00   -5.28743e+04
+            B-W    0.00000e+00    0.00000e+00
+           B-HD    0.00000e+00    0.00000e+00
+            W-W    0.00000e+00    0.00000e+00
+           W-HD    0.00000e+00    0.00000e+00
+          HD-HD    0.00000e+00    0.00000e+00
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ Pair Search distance check            1864.947072       16784.524     0.2
+ NxN RF Elec. + LJ [F]               215979.303360     8207213.528    97.6
+ NxN RF Elec. + LJ [V&F]               2182.717888      117866.766     1.4
+ Shift-X                                 35.856561         215.139     0.0
+ Bonds                                  336.000960       19824.057     0.2
+ Angles                                 224.000640       37632.108     0.4
+ Virial                                  45.607606         820.937     0.0
+ Stop-CM                                  8.968622          89.686     0.0
+ P-Coupling                              44.817500         268.905     0.0
+ Calc-Ekin                              358.545122        9680.718     0.1
+-----------------------------------------------------------------------------
+ Total                                                 8410396.367   100.0
+-----------------------------------------------------------------------------
+
+
+     R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank, each using 6 OpenMP threads
+
+ Computing:          Num   Num      Call    Wall time         Giga-Cycles
+                     Ranks Threads  Count      (s)         total sum    %
+-----------------------------------------------------------------------------
+ Neighbor search        1    6      14001       3.132         65.767   3.6
+ Launch GPU ops.        1    6     350001      11.445        240.347  13.3
+ Force                  1    6     350001      12.491        262.316  14.5
+ Wait GPU local         1    6     350001      22.300        468.314  26.0
+ NB X/F buffer ops.     1    6     686001       6.473        135.940   7.5
+ COM pull force         1    6     350001      12.068        253.437  14.1
+ Write traj.            1    6        351       0.098          2.049   0.1
+ Update                 1    6     350001      14.328        300.909  16.7
+ Rest                                           3.545         74.451   4.1
+-----------------------------------------------------------------------------
+ Total                                         85.879       1803.530 100.0
+-----------------------------------------------------------------------------
+
+ GPU timings
+-----------------------------------------------------------------------------
+ Computing:                         Count  Wall t (s)      ms/step       %
+-----------------------------------------------------------------------------
+ Pair list H2D                      14001       0.331        0.024     0.9
+ X / q H2D                         350001       3.131        0.009     8.8
+ Nonbonded F kernel                336000      27.707        0.082    78.3
+ Nonbonded F+prune k.               10500       0.957        0.091     2.7
+ Nonbonded F+ene+prune k.            3501       0.344        0.098     1.0
+ F D2H                             350001       2.917        0.008     8.2
+-----------------------------------------------------------------------------
+ Total                                         35.387        0.101   100.0
+-----------------------------------------------------------------------------
+
+Force evaluation time GPU/CPU: 0.101 ms/0.036 ms = 2.833
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      498.342       85.879      580.3
+                 (ns/day)    (hour/ns)
+Performance:     7042.452        0.003
+Finished mdrun on rank 0 Mon Oct 16 17:55:49 2017

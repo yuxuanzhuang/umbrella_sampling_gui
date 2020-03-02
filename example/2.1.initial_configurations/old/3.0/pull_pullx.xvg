@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:28:47 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "Pull COM"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Position (nm)"
+@TYPE xy
+0.0000	2.08703
+1.0000	2.83651
+2.0000	2.97678
+3.0000	3.0114
+4.0000	2.96811
+5.0000	2.94001
+6.0000	2.9311
+7.0000	2.95714
+8.0000	3.01555
+9.0000	2.84293
+10.0000	2.98708

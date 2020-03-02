@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:29:45 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	1712.97
+1.0000	324.579
+2.0000	21.9699
+3.0000	81.3207
+4.0000	-74.4129
+5.0000	90.5863
+6.0000	48.5554
+7.0000	27.1777
+8.0000	74.3378
+9.0000	62.1427
+10.0000	5.34407

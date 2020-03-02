@@ -1,0 +1,27 @@
+# This file was created Mon Oct 16 17:26:40 2017
+# Created by:
+#                   :-) GROMACS - gmx mdrun, VERSION 5.1.4 (-:
+# 
+# Executable:   /usr/local/gromacs-5.1.4/bin/gmx
+# Data prefix:  /usr/local/gromacs-5.1.4
+# Command line:
+#   gmx mdrun -nt 1 -deffnm pull -v
+# gmx mdrun is part of G R O M A C S:
+#
+# Green Red Orange Magenta Azure Cyan Skyblue
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	-887.031
+1.0000	-84.2773
+2.0000	-69.9954
+3.0000	-22.7334
+4.0000	-22.1524
+5.0000	39.6186
+6.0000	-40.8592
+7.0000	1.54118
+8.0000	-42.0513
+9.0000	20.8739
+10.0000	22.0134
