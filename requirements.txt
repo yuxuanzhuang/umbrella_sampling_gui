@@ -3,3 +3,4 @@ gmxapi
 matplotlib
 gromacs-wrapper
 gromacs 2020 beta2
+PyQt5
